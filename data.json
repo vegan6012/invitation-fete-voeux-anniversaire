@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "titre_site": "30 ans d'amour, 30 ans de vie",
+    "description": "Invitation au renouvellement de vœux de Nathalie & Philippe et aux 30 ans de Léa"
+  },
+  "evenement": {
+    "type_1": "Renouvellement de vœux — 30 ans de mariage",
+    "type_2": "Anniversaire — 30 ans de Léa",
+    "date": "12 juillet 2026",
+    "date_iso": "2026-07-12T14:00:00",
+    "heure_debut": "14h00",
+    "heure_fin": "02h00"
+  },
+  "famille": {
+    "parents": {
+      "prenom_1": "Nathalie",
+      "prenom_2": "Philippe",
+      "nom_famille": "Dumont",
+      "date_mariage": "12 juillet 1996",
+      "annees_mariage": 30
+    },
+    "enfant": {
+      "prenom": "Léa",
+      "date_naissance": "12 juillet 1996",
+      "age": 30
+    }
+  },
+  "lieu": {
+    "nom": "Domaine de la Roseraie",
+    "adresse": "245 Chemin des Vignes, 69380 Chasselay",
+    "region": "Beaujolais, près de Lyon",
+    "lien_maps": "https://maps.google.com/?q=Domaine+de+la+Roseraie+Chasselay",
+    "parking": true,
+    "acces_pmr": true
+  },
+  "programme": [
+    {
+      "heure": "14h00",
+      "titre": "Accueil des invités",
+      "description": "Réception au jardin avec rafraîchissements",
+      "icone": "🥂"
+    },
+    {
+      "heure": "15h00",
+      "titre": "Cérémonie de renouvellement de vœux",
+      "description": "Nathalie & Philippe renouvellent leurs vœux sous la pergola",
+      "icone": "💍"
+    },
+    {
+      "heure": "16h30",
+      "titre": "Cocktail & anniversaire de Léa",
+      "description": "Toast aux 30 ans de Léa, photos de famille et cocktail",
+      "icone": "🎂"
+    },
+    {
+      "heure": "19h00",
+      "titre": "Dîner de fête",
+      "description": "Repas gastronomique dans l'orangerie du domaine",
+      "icone": "🍽️"
+    },
+    {
+      "heure": "22h00",
+      "titre": "Soirée dansante",
+      "description": "Musique, piste de danse et photobooth jusqu'au bout de la nuit",
+      "icone": "💃"
+    }
+  ],
+  "infos_pratiques": {
+    "dress_code": "Tenue de cocktail — couleurs douces et pastels appréciées",
+    "hebergement": "Hôtel & chambres d'hôtes à proximité : liste envoyée avec la confirmation",
+    "enfants": "Les enfants sont les bienvenus — espace jeux prévu",
+    "cadeaux": "Votre présence est le plus beau des cadeaux. Si vous souhaitez contribuer, une cagnotte sera disponible sur place."
+  },
+  "rsvp": {
+    "date_limite": "15 juin 2026",
+    "email_contact": "fete-dumont@exemple.fr",
+    "telephone": "06 12 34 56 78"
+  }
+}
