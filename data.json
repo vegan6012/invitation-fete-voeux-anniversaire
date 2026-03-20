@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "titre_page": "30 ans d'amour, 30 ans de vie — Nathalie, Philippe & Léa",
+    "description": "Invitation à la fête qui célèbre les 30 ans de mariage de Nathalie & Philippe et les 30 ans de Léa"
+  },
+  "hero": {
+    "surtitre": "Vous êtes invité(e) à célébrer",
+    "titre_ligne1": "30 ans d'amour,",
+    "titre_ligne2": "30 ans de vie",
+    "carte_mariage": {
+      "emoji": "💍",
+      "label": "Renouvellement de vœux",
+      "noms": "Nathalie & Philippe",
+      "detail": "30 ans de mariage"
+    },
+    "carte_anniversaire": {
+      "emoji": "🎂",
+      "label": "Joyeux anniversaire",
+      "noms": "Léa",
+      "detail": "30 ans"
+    }
+  },
+  "evenement": {
+    "date_affichee": "12 juillet 2026",
+    "date_iso": "2026-07-12T15:00:00",
+    "lieu_court": "Domaine de la Roseraie"
+  },
+  "programme": {
+    "titre": "Le programme",
+    "sous_titre": "Une journée, deux célébrations, mille souvenirs",
+    "moments": [
+      {
+        "heure": "15h00",
+        "titre": "Cérémonie de renouvellement de vœux",
+        "description": "Nathalie & Philippe se disent oui… encore une fois. Rendez-vous dans le jardin des roses.",
+        "type": "voeux",
+        "icone": "💍"
+      },
+      {
+        "heure": "16h00",
+        "titre": "Vin d'honneur & cocktail",
+        "description": "Bulles, toasts et retrouvailles sous les arbres. L'occasion de trinquer aux 30 ans… des deux !",
+        "type": "commun",
+        "icone": "🥂"
+      },
+      {
+        "heure": "17h30",
+        "titre": "Happy Birthday Léa !",
+        "description": "Le gâteau, les bougies (toutes les 30), les discours embarrassants… bref, la totale.",
+        "type": "anniversaire",
+        "icone": "🎂"
+      },
+      {
+        "heure": "19h30",
+        "titre": "Dîner de fête",
+        "description": "Un repas festif tous ensemble. Menu surprise du chef, accords mets & vins.",
+        "type": "commun",
+        "icone": "🍽️"
+      },
+      {
+        "heure": "22h00",
+        "titre": "Soirée dansante",
+        "description": "DJ, piste de danse, photobooth et bêtises jusqu'au bout de la nuit.",
+        "type": "commun",
+        "icone": "🎶"
+      }
+    ]
+  },
+  "lieu": {
+    "titre": "Le lieu",
+    "nom": "Domaine de la Roseraie",
+    "adresse": "245 chemin des Vignes, 69380 Charnay",
+    "indication": "À 30 min de Lyon — parking sur place",
+    "lien_maps": "https://maps.google.com/?q=Domaine+de+la+Roseraie+Charnay",
+    "texte_bouton": "Voir sur Google Maps"
+  },
+  "infos": {
+    "titre": "Infos pratiques",
+    "cartes": [
+      {
+        "icone": "👗",
+        "titre": "Dress code",
+        "texte": "Tenue de fête ! On évite juste le blanc (laissons ça à Nathalie)."
+      },
+      {
+        "icone": "👶",
+        "titre": "Enfants",
+        "texte": "Les petits sont les bienvenus. Un espace jeux sera prévu pour eux."
+      },
+      {
+        "icone": "🎁",
+        "titre": "Cadeaux",
+        "texte": "Votre présence est le plus beau cadeau. Sinon, une cagnotte sera disponible sur place."
+      },
+      {
+        "icone": "📞",
+        "titre": "Contact",
+        "texte": "Une question ? Appelez Léa au 06 12 34 56 78 ou écrivez à lea@email.com"
+      }
+    ]
+  },
+  "footer": {
+    "texte": "Nathalie & Philippe · Léa",
+    "annee": "2026"
+  }
+}
