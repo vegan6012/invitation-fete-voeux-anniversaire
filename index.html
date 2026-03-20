@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 ans d'amour, 30 ans de vie — Nathalie & Philippe | Léa</title>
+    <meta name="description" content="Invitation au renouvellement de vœux de Nathalie & Philippe et aux 30 ans de Léa — 12 juillet 2026">
+
+    <!-- Polices Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <!-- Feuille de style -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">N &amp; P · L</a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#histoire">Notre Histoire</a></li>
+                <li><a href="#programme">Programme</a></li>
+                <li><a href="#lieu">Lieu</a></li>
+                <li><a href="#infos">Infos</a></li>
+                <li><a href="#rsvp" class="nav-cta">RSVP</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         SECTION HERO — Écran d'accueil
+         ============================================ -->
+    <header id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Vous êtes chaleureusement invité(e) à célébrer</p>
+            <h1 class="hero-title">30 ans d'amour,<br>30 ans de vie</h1>
+            <div class="hero-details">
+                <div class="hero-event">
+                    <span class="hero-icon">💍</span>
+                    <p>Renouvellement de vœux<br><strong>Nathalie &amp; Philippe</strong><br>30 ans de mariage</p>
+                </div>
+                <div class="hero-separator">✦</div>
+                <div class="hero-event">
+                    <span class="hero-icon">🎂</span>
+                    <p>Joyeux anniversaire<br><strong>Léa</strong><br>30 ans</p>
+                </div>
+            </div>
+            <p class="hero-date">12 juillet 2026 · Domaine de la Roseraie</p>
+
+            <!-- Compte à rebours -->
+            <div id="countdown" class="countdown">
+                <div class="countdown-item">
+                    <span id="countdown-days" class="countdown-number">--</span>
+                    <span class="countdown-label">jours</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="countdown-hours" class="countdown-number">--</span>
+                    <span class="countdown-label">heures</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="countdown-minutes" class="countdown-number">--</span>
+                    <span class="countdown-label">minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="countdown-seconds" class="countdown-number">--</span>
+                    <span class="countdown-label">secondes</span>
+                </div>
+            </div>
+
+            <a href="#rsvp" class="btn btn-primary">Confirmer ma présence</a>
+        </div>
+    </header>
+
+    <!-- ============================================
+         SECTION NOTRE HISTOIRE
+         ============================================ -->
+    <section id="histoire" class="section">
+        <div class="container">
+            <h2 class="section-title">Notre Histoire</h2>
+            <p class="section-subtitle">Une date, une double joie</p>
+
+            <div class="histoire-grid">
+                <!-- Colonne Parents -->
+                <div class="histoire-card fade-in">
+                    <div class="histoire-icon">💍</div>
+                    <h3>Nathalie &amp; Philippe</h3>
+                    <p class="histoire-date-badge">12 juillet 1996</p>
+                    <p>Il y a 30 ans, Nathalie et Philippe se disaient « oui » dans la petite église de Chasselay. Depuis, leur amour n'a cessé de grandir, porté par les rires, les épreuves surmontées ensemble et une complicité à toute épreuve.</p>
+                    <p>Aujourd'hui, ils souhaitent renouveler leurs vœux devant ceux qui comptent le plus : <strong>vous</strong>.</p>
+                </div>
+
+                <!-- Séparateur central -->
+                <div class="histoire-separator fade-in">
+                    <div class="histoire-line"></div>
+                    <div class="histoire-badge">12·07</div>
+                    <div class="histoire-line"></div>
+                </div>
+
+                <!-- Colonne Léa -->
+                <div class="histoire-card fade-in">
+                    <div class="histoire-icon">🎂</div>
+                    <h3>Léa</h3>
+                    <p class="histoire-date-badge">12 juillet 1996</p>
+                    <p>Le jour même de leur mariage, Nathalie et Philippe ont reçu le plus beau cadeau imaginable : la naissance de Léa. Depuis 30 ans, elle illumine leurs vies de sa joie de vivre et de son énergie contagieuse.</p>
+                    <p>Quoi de mieux que de célébrer <strong>ensemble</strong> ces deux événements qui partagent la même date magique ?</p>
+                </div>
+            </div>
+
+            <blockquote class="histoire-quote fade-in">
+                « Le 12 juillet 1996, nous avons dit oui à l'amour… et la vie nous a offert Léa en prime. Trente ans plus tard, nous avons deux fois plus de raisons de faire la fête ! »
+                <cite>— Nathalie &amp; Philippe</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION PROGRAMME
+         ============================================ -->
+    <section id="programme" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Programme de la Journée</h2>
+            <p class="section-subtitle">Une journée, deux célébrations, mille souvenirs</p>
+
+            <div class="timeline">
+                <!-- Événement 1 -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-time">14h00</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-icon">🥂</span>
+                        <h3>Accueil des invités</h3>
+                        <p>Réception au jardin avec rafraîchissements et retrouvailles</p>
+                    </div>
+                </div>
+
+                <!-- Événement 2 -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-time">15h00</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-icon">💍</span>
+                        <h3>Cérémonie de renouvellement de vœux</h3>
+                        <p>Nathalie &amp; Philippe renouvellent leurs promesses sous la pergola fleurie du domaine</p>
+                        <span class="timeline-badge badge-voeux">Renouvellement de vœux</span>
+                    </div>
+                </div>
+
+                <!-- Événement 3 -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-time">16h30</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-icon">🎂</span>
+                        <h3>Cocktail &amp; Anniversaire de Léa</h3>
+                        <p>Toast aux 30 ans de Léa, photos de famille et cocktail gourmand</p>
+                        <span class="timeline-badge badge-anniv">30 ans de Léa</span>
+                    </div>
+                </div>
+
+                <!-- Événement 4 -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-time">19h00</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-icon">🍽️</span>
+                        <h3>Dîner de fête</h3>
+                        <p>Repas gastronomique dans l'orangerie du domaine, accompagné de surprises et discours</p>
+                    </div>
+                </div>
+
+                <!-- Événement 5 -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-time">22h00</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-icon">💃</span>
+                        <h3>Soirée dansante</h3>
+                        <p>Musique, piste de danse et photobooth jusqu'au bout de la nuit !</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION LIEU
+         ============================================ -->
+    <section id="lieu" class="section">
+        <div class="container">
+            <h2 class="section-title">Le Lieu</h2>
+            <p class="section-subtitle">Un cadre enchanteur pour une journée inoubliable</p>
+
+            <div class="lieu-grid">
+                <div class="lieu-info fade-in">
+                    <h3>Domaine de la Roseraie</h3>
+                    <p class="lieu-adresse">
+                        📍 245 Chemin des Vignes<br>
+                        69380 Chasselay<br>
+                        Beaujolais, près de Lyon
+                    </p>
+                    <ul class="lieu-details">
+                        <li>🅿️ Parking gratuit sur place</li>
+                        <li>♿ Accès PMR disponible</li>
+                        <li>🌳 Parc arboré de 3 hectares</li>
+                    </ul>
+                    <a href="https://maps.google.com/?q=Domaine+de+la+Roseraie+Chasselay" target="_blank" rel="noopener" class="btn btn-secondary">
+                        Ouvrir dans Google Maps
+                    </a>
+                </div>
+                <div class="lieu-map fade-in">
+                    <!-- MODIFIABLE : Remplacez l'URL src par votre propre embed Google Maps -->
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.5!2d4.77!3d45.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDUyJzEyLjAiTiA0wrA0NiczNi4wIkU!5e0!3m2!1sfr!2sfr!4v1"
+                        width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
+                        title="Carte du Domaine de la Roseraie">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION INFOS PRATIQUES
+         ============================================ -->
+    <section id="infos" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Infos Pratiques</h2>
+            <p class="section-subtitle">Tout ce qu'il faut savoir pour profiter pleinement de la journée</p>
+
+            <div class="infos-grid">
+                <div class="info-card fade-in">
+                    <div class="info-icon">👗</div>
+                    <h3>Dress Code</h3>
+                    <p>Tenue de cocktail — couleurs douces et pastels appréciées. Prévoyez des chaussures adaptées au jardin !</p>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-icon">🏨</div>
+                    <h3>Hébergement</h3>
+                    <p>Hôtels et chambres d'hôtes à proximité : une liste de suggestions vous sera envoyée avec la confirmation.</p>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-icon">👶</div>
+                    <h3>Enfants</h3>
+                    <p>Les enfants sont les bienvenus ! Un espace jeux avec animateur sera prévu pour les petits.</p>
+                </div>
+                <div class="info-card fade-in">
+                    <div class="info-icon">🎁</div>
+                    <h3>Cadeaux</h3>
+                    <p>Votre présence est le plus beau des cadeaux. Si vous souhaitez contribuer, une cagnotte sera disponible sur place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECTION RSVP
+         ============================================ -->
+    <section id="rsvp" class="section">
+        <div class="container">
+            <h2 class="section-title">Confirmez votre Présence</h2>
+            <p class="section-subtitle">Merci de répondre avant le <strong>15 juin 2026</strong></p>
+
+            <!-- MODIFIABLE : Remplacez l'action par votre endpoint Formspree, Netlify Forms, etc. -->
+            <form id="rsvp-form" class="rsvp-form fade-in" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">Nom complet *</label>
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom et prénom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.fr">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="presence">Serez-vous présent(e) ? *</label>
+                        <select id="presence" name="presence" required>
+                            <option value="">— Choisissez —</option>
+                            <option value="oui">Oui, avec joie !</option>
+                            <option value="non">Malheureusement non</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="accompagnants">Nombre d'accompagnants</label>
+                        <select id="accompagnants" name="accompagnants">
+                            <option value="0">Je viens seul(e)</option>
+                            <option value="1">+1 personne</option>
+                            <option value="2">+2 personnes</option>
+                            <option value="3">+3 personnes</option>
+                            <option value="4">+4 personnes</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="allergies">Allergies ou régime alimentaire</label>
+                    <input type="text" id="allergies" name="allergies" placeholder="Végétarien, sans gluten, allergies...">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Un petit mot pour la famille</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Votre message pour Nathalie, Philippe et Léa..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">
+                    Envoyer ma réponse
+                </button>
+            </form>
+
+            <div id="rsvp-success" class="rsvp-success" style="display: none;">
+                <span class="success-icon">🎉</span>
+                <h3>Merci pour votre réponse !</h3>
+                <p>Nous avons bien reçu votre confirmation. Au plaisir de vous retrouver le 12 juillet !</p>
+            </div>
+
+            <div class="rsvp-contact">
+                <p>Une question ? Contactez-nous :</p>
+                <p>📧 <a href="mailto:fete-dumont@exemple.fr">fete-dumont@exemple.fr</a> · 📞 06 12 34 56 78</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-names">Nathalie &amp; Philippe · Léa</p>
+            <p class="footer-date">12 juillet 2026</p>
+            <p class="footer-tagline">30 ans d'amour, 30 ans de vie ✨</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
