@@ -3,49 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Le titre et la description sont injectés depuis data.json -->
-    <title>Chargement...</title>
-    <meta name="description" content="">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>30 ans d'amour, 30 ans de vie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* ============================================================
-           CSS COMPLET — Design joyeux & dynamique
-           ============================================================ */
-
-        /* --- RESET & BASE --- */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --gold: #D4A843;
-            --gold-light: #FDF6E3;
-            --pink: #E8637A;
-            --pink-light: #FFF0F3;
-            --green: #5BAD6F;
-            --green-light: #EEFAF1;
-            --dark: #2D2A26;
-            --gray: #6B6560;
-            --light: #FAFAF8;
-            --white: #FFFFFF;
-            --radius: 16px;
-            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--dark);
-            background: var(--light);
-            line-height: 1.6;
+            color: #333;
+            background: #FAFAFA;
             overflow-x: hidden;
         }
 
-        /* --- CONFETTIS ANIMÉS EN FOND --- */
+        /* ============================================
+           CONFETTIS ANIMÉS (fond)
+           ============================================ */
         .confetti-container {
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
             z-index: 0;
             overflow: hidden;
@@ -53,45 +42,57 @@
 
         .confetti {
             position: absolute;
-            width: 10px; height: 10px;
-            opacity: 0.25;
+            width: 10px;
+            height: 10px;
+            opacity: 0.15;
             animation: confetti-fall linear infinite;
         }
 
+        .confetti:nth-child(odd) { border-radius: 50%; }
+        .confetti:nth-child(even) { border-radius: 2px; transform: rotate(45deg); }
+
         @keyframes confetti-fall {
-            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.3; }
-            50% { opacity: 0.2; }
-            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+            0% { transform: translateY(-10vh) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(720deg); }
         }
 
-        /* --- NAVIGATION --- */
+        /* ============================================
+           NAVIGATION
+           ============================================ */
         nav {
-            position: fixed; top: 0; left: 0; right: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 100;
-            background: rgba(255,255,255,0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-            padding: 0 2rem;
-            display: flex; align-items: center; justify-content: center;
-            height: 60px;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
         }
 
         nav a {
-            color: var(--gray);
             text-decoration: none;
+            color: #555;
             font-size: 0.9rem;
             font-weight: 500;
-            padding: 0.5rem 1.2rem;
-            border-radius: 99px;
-            transition: all 0.3s;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            color: var(--dark);
-            background: var(--gold-light);
+            color: #C9A87C;
         }
 
-        /* --- HERO --- */
+        /* ============================================
+           HERO
+           ============================================ */
         #hero {
             min-height: 100vh;
             display: flex;
@@ -99,579 +100,725 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 100px 1.5rem 3rem;
+            padding: 80px 20px 40px;
             position: relative;
             z-index: 1;
         }
 
-        #hero-surtitre {
+        #hero-sous-titre {
             font-size: 1.1rem;
-            color: var(--gray);
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.05em;
+            color: #888;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            margin-bottom: 15px;
         }
 
-        .hero-title {
+        #hero-titre {
             font-family: 'Playfair Display', serif;
-            font-weight: 900;
             font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 2.5rem;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #C9A87C, #E8B4C8, #7EB8C9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero-title .line1 { color: var(--gold); display: block; }
-        .hero-title .line2 { color: var(--pink); display: block; }
-
-        /* Cartes Hero */
+        /* Cartes couple + anniversaire */
         .hero-cards {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
+            gap: 30px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
             justify-content: center;
         }
 
         .hero-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 2rem 2.5rem;
-            box-shadow: var(--shadow);
-            min-width: 220px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            min-width: 250px;
             transition: transform 0.3s;
-            border-top: 4px solid transparent;
         }
 
-        .hero-card:hover { transform: translateY(-6px); }
-        .hero-card.voeux { border-top-color: var(--gold); }
-        .hero-card.anniv { border-top-color: var(--pink); }
+        .hero-card:hover {
+            transform: translateY(-5px);
+        }
 
-        .hero-card .card-emoji { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .hero-card .card-label { font-size: 0.85rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em; }
-        .hero-card .card-noms { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin: 0.3rem 0; }
-        .hero-card .card-detail { color: var(--gray); font-size: 0.95rem; }
+        .hero-card.voeux {
+            border-top: 4px solid #C9A87C;
+        }
 
-        .hero-separator {
+        .hero-card.anniv {
+            border-top: 4px solid #E8B4C8;
+        }
+
+        .hero-card .icone {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-card .label {
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-card .noms {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            color: var(--gold);
-            align-self: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 5px 0;
         }
 
-        /* Date & Lieu sous hero */
+        .hero-card .detail {
+            font-size: 0.95rem;
+            color: #777;
+        }
+
+        /* Date et lieu */
         #hero-date-lieu {
-            font-size: 1.15rem;
-            color: var(--gray);
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
         }
 
         /* Countdown */
         .countdown {
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .countdown-item {
-            background: var(--white);
-            border-radius: 12px;
-            padding: 1rem 1.2rem;
-            min-width: 80px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            text-align: center;
         }
 
-        .countdown-item .count-number {
+        .countdown-item .number {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 900;
-            color: var(--gold);
-            display: block;
+            color: #C9A87C;
         }
 
-        .countdown-item .count-label {
+        .countdown-item .unit {
             font-size: 0.75rem;
-            color: var(--gray);
+            color: #999;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 1px;
         }
 
-        /* --- SECTIONS GÉNÉRIQUES --- */
+        /* ============================================
+           SECTIONS COMMUNES
+           ============================================ */
         section {
             position: relative;
             z-index: 1;
-            padding: 5rem 1.5rem;
+            padding: 80px 20px;
         }
 
-        .section-container {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
+        .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 900;
-            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        .section-header p {
-            color: var(--gray);
-            font-size: 1.1rem;
-        }
-
-        /* --- PROGRAMME (section principale) --- */
+        /* ============================================
+           PROGRAMME (section principale)
+           ============================================ */
         #programme {
-            background: var(--white);
+            background: white;
         }
 
-        .programme-grid {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .moment-card {
-            display: flex;
-            gap: 1.5rem;
-            align-items: flex-start;
-            background: var(--light);
-            border-radius: var(--radius);
-            padding: 1.8rem 2rem;
-            border-left: 5px solid transparent;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .moment-card:hover {
-            transform: translateX(6px);
-            box-shadow: var(--shadow);
-        }
-
-        .moment-card.type-voeux { border-left-color: var(--gold); background: var(--gold-light); }
-        .moment-card.type-anniversaire { border-left-color: var(--pink); background: var(--pink-light); }
-        .moment-card.type-commun { border-left-color: var(--green); background: var(--green-light); }
-
-        .moment-heure {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            min-width: 65px;
-            color: var(--dark);
-        }
-
-        .moment-icone {
-            font-size: 2rem;
-            min-width: 40px;
-            text-align: center;
-        }
-
-        .moment-contenu { flex: 1; }
-
-        .moment-contenu h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
-        }
-
-        .moment-contenu p {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-
-        .moment-badge {
-            display: inline-block;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            padding: 0.2rem 0.7rem;
-            border-radius: 99px;
-            margin-top: 0.5rem;
-        }
-
-        .type-voeux .moment-badge { background: var(--gold); color: white; }
-        .type-anniversaire .moment-badge { background: var(--pink); color: white; }
-        .type-commun .moment-badge { background: var(--green); color: white; }
-
-        /* Légende du programme */
         .programme-legende {
             display: flex;
-            gap: 1.5rem;
             justify-content: center;
-            margin-top: 2.5rem;
+            gap: 25px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
         }
 
         .legende-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 8px;
             font-size: 0.85rem;
-            color: var(--gray);
+            color: #777;
         }
 
-        .legende-dot {
-            width: 12px; height: 12px;
+        .legende-pastille {
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
         }
 
-        .legende-dot.dot-voeux { background: var(--gold); }
-        .legende-dot.dot-anniv { background: var(--pink); }
-        .legende-dot.dot-commun { background: var(--green); }
+        .legende-pastille.voeux { background: #C9A87C; }
+        .legende-pastille.anniversaire { background: #E8B4C8; }
+        .legende-pastille.commun { background: #7EB8C9; }
 
-        /* --- LIEU --- */
-        #lieu { background: var(--light); }
+        .programme-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .programme-item {
+            display: flex;
+            gap: 20px;
+            padding: 25px 0;
+            border-bottom: 1px solid #f0f0f0;
+            align-items: flex-start;
+            transition: transform 0.3s;
+        }
+
+        .programme-item:hover {
+            transform: translateX(10px);
+        }
+
+        .programme-item:last-child {
+            border-bottom: none;
+        }
+
+        .programme-heure {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            min-width: 80px;
+            color: #333;
+        }
+
+        .programme-barre {
+            width: 4px;
+            min-height: 60px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .programme-barre.voeux { background: #C9A87C; }
+        .programme-barre.anniversaire { background: #E8B4C8; }
+        .programme-barre.commun { background: #7EB8C9; }
+
+        .programme-contenu {
+            flex: 1;
+        }
+
+        .programme-icone {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .programme-titre {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .programme-desc {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           LIEU
+           ============================================ */
+        #lieu {
+            background: #FAFAFA;
+            text-align: center;
+        }
 
         .lieu-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            padding: 3rem;
-            text-align: center;
-            box-shadow: var(--shadow);
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
         }
 
-        .lieu-card .lieu-icone { font-size: 3rem; margin-bottom: 1rem; }
+        .lieu-card .lieu-icone {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
 
-        .lieu-card h3 {
+        #lieu-nom {
             font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
-        .lieu-card .lieu-adresse { color: var(--gray); margin-bottom: 0.3rem; }
-        .lieu-card .lieu-indication { color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        #lieu-adresse {
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        #lieu-indication {
+            color: #aaa;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
 
         .btn-maps {
             display: inline-block;
-            background: var(--gold);
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #7EB8C9, #6BA8B9);
             color: white;
             text-decoration: none;
-            padding: 0.8rem 2rem;
-            border-radius: 99px;
-            font-weight: 600;
-            font-size: 0.95rem;
+            border-radius: 50px;
+            font-weight: 500;
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .btn-maps:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(212,168,67,0.4);
+            box-shadow: 0 5px 20px rgba(126, 184, 201, 0.4);
         }
 
-        /* --- INFOS PRATIQUES --- */
-        #infos { background: var(--white); }
+        /* ============================================
+           INFOS PRATIQUES
+           ============================================ */
+        #infos {
+            background: white;
+        }
 
         .infos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .info-card {
-            background: var(--light);
-            border-radius: var(--radius);
-            padding: 2rem;
+            background: #FAFAFA;
+            border-radius: 16px;
+            padding: 30px;
             text-align: center;
             transition: transform 0.3s;
         }
 
-        .info-card:hover { transform: translateY(-4px); }
-        .info-card .info-icone { font-size: 2.5rem; margin-bottom: 0.8rem; }
-
-        .info-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+        .info-card:hover {
+            transform: translateY(-5px);
         }
 
-        .info-card p {
-            color: var(--gray);
+        .info-card .info-icone {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .info-card .info-titre {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .info-card .info-texte {
             font-size: 0.9rem;
+            color: #888;
+            line-height: 1.5;
         }
 
-        /* --- FOOTER --- */
+        /* ============================================
+           FOOTER
+           ============================================ */
         footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: #333;
+            color: white;
             position: relative;
             z-index: 1;
-            text-align: center;
-            padding: 3rem 1.5rem;
-            background: var(--dark);
-            color: rgba(255,255,255,0.5);
         }
 
-        footer .footer-noms {
+        #footer-noms {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 5px;
         }
 
-        /* --- ANIMATIONS AU SCROLL --- */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
+        #footer-annee {
+            color: #999;
+            font-size: 0.85rem;
         }
 
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 600px) {
+            nav ul {
+                gap: 15px;
+                font-size: 0.8rem;
+            }
 
-        /* --- RESPONSIVE --- */
-        @media (max-width: 640px) {
-            .hero-cards { flex-direction: column; align-items: center; }
-            .hero-separator { display: none; }
-            .moment-card { flex-direction: column; gap: 0.8rem; }
-            .moment-heure { min-width: auto; }
-            nav { padding: 0 0.5rem; }
-            nav a { font-size: 0.78rem; padding: 0.4rem 0.7rem; }
-            .lieu-card { padding: 2rem 1.5rem; }
+            .hero-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-card {
+                min-width: 80%;
+            }
+
+            .countdown {
+                gap: 12px;
+            }
+
+            .countdown-item .number {
+                font-size: 1.8rem;
+            }
+
+            .programme-item {
+                gap: 12px;
+            }
+
+            .programme-heure {
+                font-size: 1rem;
+                min-width: 60px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== CONFETTIS (générés par JS) ===== -->
+    <!-- ==========================================
+         CONFETTIS (décoration de fond)
+         ========================================== -->
     <div class="confetti-container" id="confetti-container"></div>
 
-    <!-- ===== NAVIGATION ===== -->
-    <nav id="nav">
-        <!-- Les liens sont générés par JS depuis les sections -->
-        <a href="#programme">Programme</a>
-        <a href="#lieu">Lieu</a>
-        <a href="#infos">Infos</a>
+    <!-- ==========================================
+         NAVIGATION
+         ========================================== -->
+    <nav>
+        <ul>
+            <li><a href="#programme">Programme</a></li>
+            <li><a href="#lieu">Lieu</a></li>
+            <li><a href="#infos">Infos</a></li>
+        </ul>
     </nav>
 
-    <!-- ===== HERO ===== -->
+    <!-- ==========================================
+         HERO
+         ========================================== -->
     <section id="hero">
-        <p id="hero-surtitre"></p>
-        <h1 class="hero-title">
-            <span class="line1" id="hero-titre-1"></span>
-            <span class="line2" id="hero-titre-2"></span>
-        </h1>
-        <div class="hero-cards" id="hero-cards">
-            <!-- Cartes injectées par JS -->
+        <p id="hero-sous-titre"></p>
+        <h1 id="hero-titre"></h1>
+
+        <div class="hero-cards">
+            <div class="hero-card voeux">
+                <div class="icone">💍</div>
+                <div class="label" id="card-voeux-label"></div>
+                <div class="noms" id="card-voeux-noms"></div>
+                <div class="detail" id="card-voeux-detail"></div>
+            </div>
+            <div class="hero-card anniv">
+                <div class="icone">🎂</div>
+                <div class="label" id="card-anniv-label"></div>
+                <div class="noms" id="card-anniv-nom"></div>
+                <div class="detail" id="card-anniv-detail"></div>
+            </div>
         </div>
+
         <p id="hero-date-lieu"></p>
+
         <div class="countdown" id="countdown">
-            <!-- Countdown injecté par JS -->
+            <div class="countdown-item">
+                <div class="number" id="cd-jours">--</div>
+                <div class="unit">jours</div>
+            </div>
+            <div class="countdown-item">
+                <div class="number" id="cd-heures">--</div>
+                <div class="unit">heures</div>
+            </div>
+            <div class="countdown-item">
+                <div class="number" id="cd-minutes">--</div>
+                <div class="unit">minutes</div>
+            </div>
+            <div class="countdown-item">
+                <div class="number" id="cd-secondes">--</div>
+                <div class="unit">secondes</div>
+            </div>
         </div>
     </section>
 
-    <!-- ===== PROGRAMME ===== -->
+    <!-- ==========================================
+         PROGRAMME
+         ========================================== -->
     <section id="programme">
-        <div class="section-container">
-            <div class="section-header fade-up">
-                <h2 id="programme-titre"></h2>
-                <p id="programme-sous-titre"></p>
+        <h2 class="section-title">Programme de la journée</h2>
+        <div class="programme-legende">
+            <div class="legende-item">
+                <div class="legende-pastille voeux"></div>
+                <span>Renouvellement de vœux</span>
             </div>
-            <div class="programme-grid" id="programme-grid">
-                <!-- Moments injectés par JS -->
+            <div class="legende-item">
+                <div class="legende-pastille anniversaire"></div>
+                <span>Anniversaire</span>
             </div>
-            <div class="programme-legende" id="programme-legende">
-                <!-- Légende injectée par JS -->
+            <div class="legende-item">
+                <div class="legende-pastille commun"></div>
+                <span>Tous ensemble</span>
             </div>
+        </div>
+        <div class="programme-grid" id="programme-grid">
+            <!-- Rempli dynamiquement par JS -->
         </div>
     </section>
 
-    <!-- ===== LIEU ===== -->
+    <!-- ==========================================
+         LIEU
+         ========================================== -->
     <section id="lieu">
-        <div class="section-container">
-            <div class="section-header fade-up">
-                <h2 id="lieu-titre"></h2>
-            </div>
-            <div class="lieu-card fade-up" id="lieu-card">
-                <!-- Contenu injecté par JS -->
-            </div>
+        <h2 class="section-title">Le lieu</h2>
+        <div class="lieu-card">
+            <div class="lieu-icone">📍</div>
+            <h3 id="lieu-nom"></h3>
+            <p id="lieu-adresse"></p>
+            <p id="lieu-indication"></p>
+            <a id="lieu-maps-link" class="btn-maps" href="#" target="_blank">Ouvrir dans Google Maps</a>
         </div>
     </section>
 
-    <!-- ===== INFOS PRATIQUES ===== -->
+    <!-- ==========================================
+         INFOS PRATIQUES
+         ========================================== -->
     <section id="infos">
-        <div class="section-container">
-            <div class="section-header fade-up">
-                <h2 id="infos-titre"></h2>
-            </div>
-            <div class="infos-grid" id="infos-grid">
-                <!-- Cartes injectées par JS -->
-            </div>
+        <h2 class="section-title">Infos pratiques</h2>
+        <div class="infos-grid" id="infos-grid">
+            <!-- Rempli dynamiquement par JS -->
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
     <footer>
-        <p class="footer-noms" id="footer-noms"></p>
+        <p id="footer-noms"></p>
         <p id="footer-annee"></p>
     </footer>
 
-    <!-- ============================================================
-         JAVASCRIPT — Charge data.json et injecte TOUT le contenu
-         ============================================================ -->
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
     <script>
-    (async function() {
+        /* ==============================================
+           DONNÉES DE L'ÉVÉNEMENT
+           ==============================================
+           *** MODIFIEZ ICI pour personnaliser le site ***
+           Toutes les données sont dans cet objet DATA.
+           Changez les valeurs, sauvegardez, rechargez.
+           ============================================== */
+        const DATA = {
+            hero: {
+                titre: "30 ans d'amour,\n30 ans de vie",
+                sousTitre: "Et on fête ça ensemble !",
+                dateEvenement: "2026-07-12T15:00:00",
+                lieuCourt: "Domaine de la Roseraie"
+            },
+            couple: {
+                prenom1: "Nathalie",
+                prenom2: "Philippe",
+                label: "Renouvellement de vœux",
+                detail: "30 ans de mariage",
+                dateMariage: "12 juillet 1996"
+            },
+            anniversaire: {
+                prenom: "Léa",
+                label: "Joyeux anniversaire",
+                detail: "30 ans",
+                dateNaissance: "3 septembre 1996"
+            },
+            programme: [
+                {
+                    heure: "15h00",
+                    titre: "Cérémonie de renouvellement de vœux",
+                    description: "Nathalie & Philippe se redisent oui, 30 ans après.",
+                    type: "voeux",
+                    icone: "💍"
+                },
+                {
+                    heure: "16h00",
+                    titre: "Vin d'honneur & cocktail",
+                    description: "Champagne, petits fours et retrouvailles.",
+                    type: "commun",
+                    icone: "🥂"
+                },
+                {
+                    heure: "17h30",
+                    titre: "Jeux & animations",
+                    description: "Quiz sur les 30 ans du couple et les 30 ans de Léa.",
+                    type: "commun",
+                    icone: "🎲"
+                },
+                {
+                    heure: "19h30",
+                    titre: "Dîner",
+                    description: "Repas gastronomique tous ensemble.",
+                    type: "commun",
+                    icone: "🍽️"
+                },
+                {
+                    heure: "21h00",
+                    titre: "Gâteau & soufflage de bougies",
+                    description: "30 bougies pour Léa, et une pièce montée pour le couple !",
+                    type: "anniversaire",
+                    icone: "🎂"
+                },
+                {
+                    heure: "22h00",
+                    titre: "Soirée dansante",
+                    description: "DJ, piste de danse et photobooth.",
+                    type: "commun",
+                    icone: "💃"
+                }
+            ],
+            lieu: {
+                nom: "Domaine de la Roseraie",
+                adresse: "1234 Chemin des Roses, 69380 Lissieu",
+                lienMaps: "https://maps.google.com/?q=Domaine+de+la+Roseraie+Lissieu",
+                indication: "Parking gratuit sur place. Fléchage depuis la sortie d'autoroute."
+            },
+            infos: [
+                {
+                    icone: "👗",
+                    titre: "Dress code",
+                    texte: "Tenue de fête — soyez beaux, soyez vous !"
+                },
+                {
+                    icone: "👶",
+                    titre: "Enfants",
+                    texte: "Les enfants sont les bienvenus. Espace jeux prévu."
+                },
+                {
+                    icone: "🎁",
+                    titre: "Cadeaux",
+                    texte: "Votre présence est le plus beau des cadeaux. Si vous insistez, une cagnotte sera disponible sur place."
+                },
+                {
+                    icone: "📞",
+                    titre: "Contact",
+                    texte: "Léa : 06 12 34 56 78 — lea@email.com"
+                }
+            ]
+        };
 
-        // ---- 1. CHARGER data.json ----
-        let data;
-        try {
-            const response = await fetch('data.json');
-            data = await response.json();
-        } catch (e) {
-            document.body.innerHTML = '<p style="text-align:center;padding:4rem;font-size:1.2rem;">Erreur : impossible de charger <strong>data.json</strong>. Vérifiez que le fichier est bien dans le même dossier que index.html.</p>';
-            return;
-        }
+        /* ==============================================
+           INJECTION DES DONNÉES DANS LA PAGE
+           ============================================== */
 
-        // ---- 2. META ----
-        document.title = data.meta.titre_page;
-        document.querySelector('meta[name="description"]').content = data.meta.description;
+        // --- Hero ---
+        document.getElementById('hero-titre').textContent = DATA.hero.titre;
+        document.getElementById('hero-sous-titre').textContent = DATA.hero.sousTitre;
 
-        // ---- 3. HERO ----
-        document.getElementById('hero-surtitre').textContent = data.hero.surtitre;
-        document.getElementById('hero-titre-1').textContent = data.hero.titre_ligne1;
-        document.getElementById('hero-titre-2').textContent = data.hero.titre_ligne2;
+        // --- Cartes ---
+        document.getElementById('card-voeux-label').textContent = DATA.couple.label;
+        document.getElementById('card-voeux-noms').textContent = DATA.couple.prenom1 + " & " + DATA.couple.prenom2;
+        document.getElementById('card-voeux-detail').textContent = DATA.couple.detail;
 
-        const heroCardsHTML = `
-            <div class="hero-card voeux">
-                <div class="card-emoji">${data.hero.carte_mariage.emoji}</div>
-                <div class="card-label">${data.hero.carte_mariage.label}</div>
-                <div class="card-noms">${data.hero.carte_mariage.noms}</div>
-                <div class="card-detail">${data.hero.carte_mariage.detail}</div>
-            </div>
-            <div class="hero-separator">&</div>
-            <div class="hero-card anniv">
-                <div class="card-emoji">${data.hero.carte_anniversaire.emoji}</div>
-                <div class="card-label">${data.hero.carte_anniversaire.label}</div>
-                <div class="card-noms">${data.hero.carte_anniversaire.noms}</div>
-                <div class="card-detail">${data.hero.carte_anniversaire.detail}</div>
-            </div>
-        `;
-        document.getElementById('hero-cards').innerHTML = heroCardsHTML;
+        document.getElementById('card-anniv-label').textContent = DATA.anniversaire.label;
+        document.getElementById('card-anniv-nom').textContent = DATA.anniversaire.prenom;
+        document.getElementById('card-anniv-detail').textContent = DATA.anniversaire.detail;
 
-        document.getElementById('hero-date-lieu').textContent =
-            data.evenement.date_affichee + ' · ' + data.evenement.lieu_court;
+        // --- Date et lieu ---
+        var dateObj = new Date(DATA.hero.dateEvenement);
+        var options = { day: 'numeric', month: 'long', year: 'numeric' };
+        var dateFormatee = dateObj.toLocaleDateString('fr-FR', options);
+        document.getElementById('hero-date-lieu').textContent = dateFormatee + " · " + DATA.hero.lieuCourt;
 
-        // ---- 4. COUNTDOWN ----
+        // --- Programme ---
+        var progGrid = document.getElementById('programme-grid');
+        DATA.programme.forEach(function(item) {
+            var div = document.createElement('div');
+            div.className = 'programme-item';
+            div.innerHTML =
+                '<div class="programme-heure">' + item.heure + '</div>' +
+                '<div class="programme-barre ' + item.type + '"></div>' +
+                '<div class="programme-contenu">' +
+                    '<div class="programme-icone">' + item.icone + '</div>' +
+                    '<div class="programme-titre">' + item.titre + '</div>' +
+                    '<div class="programme-desc">' + item.description + '</div>' +
+                '</div>';
+            progGrid.appendChild(div);
+        });
+
+        // --- Lieu ---
+        document.getElementById('lieu-nom').textContent = DATA.lieu.nom;
+        document.getElementById('lieu-adresse').textContent = DATA.lieu.adresse;
+        document.getElementById('lieu-indication').textContent = DATA.lieu.indication;
+        document.getElementById('lieu-maps-link').href = DATA.lieu.lienMaps;
+
+        // --- Infos pratiques ---
+        var infosGrid = document.getElementById('infos-grid');
+        DATA.infos.forEach(function(info) {
+            var div = document.createElement('div');
+            div.className = 'info-card';
+            div.innerHTML =
+                '<div class="info-icone">' + info.icone + '</div>' +
+                '<div class="info-titre">' + info.titre + '</div>' +
+                '<div class="info-texte">' + info.texte + '</div>';
+            infosGrid.appendChild(div);
+        });
+
+        // --- Footer ---
+        document.getElementById('footer-noms').textContent =
+            DATA.couple.prenom1 + " & " + DATA.couple.prenom2 + " · " + DATA.anniversaire.prenom;
+        document.getElementById('footer-annee').textContent = "2026";
+
+        /* ==============================================
+           COUNTDOWN (compte à rebours)
+           ============================================== */
         function updateCountdown() {
-            const now = new Date();
-            const target = new Date(data.evenement.date_iso);
-            const diff = target - now;
+            var now = new Date().getTime();
+            var target = new Date(DATA.hero.dateEvenement).getTime();
+            var diff = target - now;
 
             if (diff <= 0) {
-                document.getElementById('countdown').innerHTML = '<p style="font-size:1.3rem;color:var(--gold);">C\'est aujourd\'hui ! 🎉</p>';
+                document.getElementById('cd-jours').textContent = "🎉";
+                document.getElementById('cd-heures').textContent = "";
+                document.getElementById('cd-minutes').textContent = "";
+                document.getElementById('cd-secondes').textContent = "";
                 return;
             }
 
-            const jours = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const heures = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const secondes = Math.floor((diff % (1000 * 60)) / 1000);
+            var jours = Math.floor(diff / (1000 * 60 * 60 * 24));
+            var heures = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            var secondes = Math.floor((diff % (1000 * 60)) / 1000);
 
-            document.getElementById('countdown').innerHTML = `
-                <div class="countdown-item"><span class="count-number">${jours}</span><span class="count-label">jours</span></div>
-                <div class="countdown-item"><span class="count-number">${String(heures).padStart(2,'0')}</span><span class="count-label">heures</span></div>
-                <div class="countdown-item"><span class="count-number">${String(minutes).padStart(2,'0')}</span><span class="count-label">minutes</span></div>
-                <div class="countdown-item"><span class="count-number">${String(secondes).padStart(2,'0')}</span><span class="count-label">secondes</span></div>
-            `;
+            document.getElementById('cd-jours').textContent = jours;
+            document.getElementById('cd-heures').textContent = heures < 10 ? "0" + heures : heures;
+            document.getElementById('cd-minutes').textContent = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById('cd-secondes').textContent = secondes < 10 ? "0" + secondes : secondes;
         }
+
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
-        // ---- 5. PROGRAMME ----
-        document.getElementById('programme-titre').textContent = data.programme.titre;
-        document.getElementById('programme-sous-titre').textContent = data.programme.sous_titre;
+        /* ==============================================
+           CONFETTIS (animation décorative)
+           ============================================== */
+        var confettiColors = ['#C9A87C', '#E8B4C8', '#7EB8C9', '#B8D4A3', '#F0C987', '#D4A5C9'];
+        var container = document.getElementById('confetti-container');
 
-        const typeLabels = { voeux: 'Renouvellement', anniversaire: 'Anniversaire', commun: 'Tous ensemble' };
-
-        const momentsHTML = data.programme.moments.map((m, i) => `
-            <div class="moment-card type-${m.type} fade-up" style="transition-delay: ${i * 0.1}s">
-                <div class="moment-heure">${m.heure}</div>
-                <div class="moment-icone">${m.icone}</div>
-                <div class="moment-contenu">
-                    <h3>${m.titre}</h3>
-                    <p>${m.description}</p>
-                    <span class="moment-badge">${typeLabels[m.type] || m.type}</span>
-                </div>
-            </div>
-        `).join('');
-        document.getElementById('programme-grid').innerHTML = momentsHTML;
-
-        document.getElementById('programme-legende').innerHTML = `
-            <div class="legende-item"><span class="legende-dot dot-voeux"></span> Renouvellement de vœux</div>
-            <div class="legende-item"><span class="legende-dot dot-anniv"></span> Anniversaire</div>
-            <div class="legende-item"><span class="legende-dot dot-commun"></span> Tous ensemble</div>
-        `;
-
-        // ---- 6. LIEU ----
-        document.getElementById('lieu-titre').textContent = data.lieu.titre;
-        document.getElementById('lieu-card').innerHTML = `
-            <div class="lieu-icone">📍</div>
-            <h3>${data.lieu.nom}</h3>
-            <p class="lieu-adresse">${data.lieu.adresse}</p>
-            <p class="lieu-indication">${data.lieu.indication}</p>
-            <a href="${data.lieu.lien_maps}" target="_blank" rel="noopener" class="btn-maps">${data.lieu.texte_bouton}</a>
-        `;
-
-        // ---- 7. INFOS PRATIQUES ----
-        document.getElementById('infos-titre').textContent = data.infos.titre;
-        const infosHTML = data.infos.cartes.map((c, i) => `
-            <div class="info-card fade-up" style="transition-delay: ${i * 0.1}s">
-                <div class="info-icone">${c.icone}</div>
-                <h3>${c.titre}</h3>
-                <p>${c.texte}</p>
-            </div>
-        `).join('');
-        document.getElementById('infos-grid').innerHTML = infosHTML;
-
-        // ---- 8. FOOTER ----
-        document.getElementById('footer-noms').textContent = data.footer.texte;
-        document.getElementById('footer-annee').textContent = data.footer.annee;
-
-        // ---- 9. CONFETTIS ----
-        const confettiContainer = document.getElementById('confetti-container');
-        const colors = ['#D4A843', '#E8637A', '#5BAD6F', '#F4C542', '#A78BFA', '#60B5F6'];
-        const shapes = ['circle', 'square'];
-
-        for (let i = 0; i < 40; i++) {
-            const el = document.createElement('div');
-            el.classList.add('confetti');
-            const color = colors[Math.floor(Math.random() * colors.length)];
-            const size = Math.random() * 8 + 5;
-            const left = Math.random() * 100;
-            const delay = Math.random() * 15;
-            const duration = Math.random() * 10 + 10;
-            const shape = shapes[Math.floor(Math.random() * shapes.length)];
-
-            el.style.cssText = `
-                left: ${left}%;
-                width: ${size}px;
-                height: ${size}px;
-                background: ${color};
-                border-radius: ${shape === 'circle' ? '50%' : '2px'};
-                animation-delay: ${delay}s;
-                animation-duration: ${duration}s;
-            `;
-            confettiContainer.appendChild(el);
+        for (var i = 0; i < 30; i++) {
+            var confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+            confetti.style.animationDuration = (Math.random() * 10 + 8) + 's';
+            confetti.style.animationDelay = (Math.random() * 10) + 's';
+            confetti.style.width = (Math.random() * 8 + 6) + 'px';
+            confetti.style.height = confetti.style.width;
+            container.appendChild(confetti);
         }
-
-        // ---- 10. ANIMATIONS AU SCROLL ----
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    })();
     </script>
 
 </body>
