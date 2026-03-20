@@ -3,347 +3,1450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>30 ans d'amour, 30 ans de vie — Nathalie & Philippe | Léa</title>
-    <meta name="description" content="Invitation au renouvellement de vœux de Nathalie & Philippe et aux 30 ans de Léa — 12 juillet 2026">
+    <title>30 ans d'amour, 30 ans de vie — Nathalie, Philippe &amp; Léa</title>
+    <meta name="description" content="Invitation au renouvellement de vœux de Nathalie &amp; Philippe et aux 30 ans de Léa — 12 juillet 2026">
 
-    <!-- Polices Google Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
-    <!-- Feuille de style -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ============================================
+           VARIABLES & RESET
+           ============================================ */
+        :root {
+            /* -- Couleurs -- */
+            --color-bg:        #FAF7F2;
+            --color-bg-alt:    #F3EDE4;
+            --color-text:      #3A3A3A;
+            --color-text-light:#6B6B6B;
+            --color-gold:      #C9A87C;
+            --color-gold-dark: #A8845A;
+            --color-brown:     #8B6F5C;
+            --color-rose:      #D4A0A0;
+            --color-rose-light:#F0DADA;
+            --color-white:     #FFFFFF;
+            --color-dark:      #2C2420;
+
+            /* -- Typographie -- */
+            --font-heading: 'Playfair Display', 'Georgia', serif;
+            --font-body:    'Lora', 'Georgia', serif;
+
+            /* -- Espacement -- */
+            --section-padding: 100px 0;
+            --container-width: 1100px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            color: var(--color-gold-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--color-brown);
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(201, 168, 124, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .navbar-logo {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-brown);
+            letter-spacing: 1px;
+        }
+
+        .navbar-logo span {
+            color: var(--color-gold);
+        }
+
+        .navbar-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .navbar-links a {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .navbar-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--color-gold);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-links a:hover::after {
+            width: 100%;
+        }
+
+        .navbar-links a:hover {
+            color: var(--color-brown);
+        }
+
+        /* Menu hamburger mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--color-brown);
+            transition: all 0.3s;
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            background: linear-gradient(
+                135deg,
+                var(--color-bg) 0%,
+                var(--color-bg-alt) 50%,
+                var(--color-rose-light) 100%
+            );
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Motif décoratif subtil */
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(201, 168, 124, 0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(212, 160, 160, 0.06) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(30px, -30px) rotate(3deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle-top {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-text-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: var(--color-dark);
+            line-height: 1.15;
+            margin-bottom: 40px;
+        }
+
+        .hero-title em {
+            color: var(--color-gold);
+            font-style: italic;
+        }
+
+        /* Les deux événements côte à côte */
+        .hero-events {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-event-card {
+            text-align: center;
+            padding: 32px;
+            border-radius: 16px;
+            min-width: 260px;
+            max-width: 320px;
+        }
+
+        .hero-event-card.voeux {
+            background: rgba(201, 168, 124, 0.1);
+            border: 1px solid rgba(201, 168, 124, 0.25);
+        }
+
+        .hero-event-card.anniversaire {
+            background: rgba(212, 160, 160, 0.1);
+            border: 1px solid rgba(212, 160, 160, 0.25);
+        }
+
+        .hero-event-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-event-label {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-text-light);
+            margin-bottom: 8px;
+        }
+
+        .hero-event-names {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-dark);
+            margin-bottom: 4px;
+        }
+
+        .hero-event-detail {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+        }
+
+        /* Séparateur décoratif */
+        .hero-separator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold);
+            font-size: 1.5rem;
+        }
+
+        .hero-separator span {
+            font-family: var(--font-heading);
+            font-style: italic;
+        }
+
+        .hero-date-location {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-brown);
+            letter-spacing: 1px;
+            margin-bottom: 48px;
+        }
+
+        /* Countdown */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .countdown-number {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--color-gold-dark);
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-text-light);
+            margin-top: 4px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-white);
+            background: var(--color-gold-dark);
+            padding: 16px 48px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            background: var(--color-brown);
+            color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(168, 132, 90, 0.3);
+        }
+
+        /* ============================================
+           TITRES DE SECTION
+           ============================================ */
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 16px;
+            color: var(--color-dark);
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--color-gold);
+            margin: 0 auto 48px;
+        }
+
+        /* ============================================
+           NOTRE HISTOIRE
+           ============================================ */
+        #histoire {
+            padding: var(--section-padding);
+            background: var(--color-white);
+        }
+
+        .histoire-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-size: 1.05rem;
+            color: var(--color-text-light);
+            font-style: italic;
+        }
+
+        .histoire-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .histoire-card {
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .histoire-card.voeux-card {
+            background: linear-gradient(135deg, rgba(201, 168, 124, 0.08), rgba(201, 168, 124, 0.03));
+            border: 1px solid rgba(201, 168, 124, 0.15);
+        }
+
+        .histoire-card.anniversaire-card {
+            background: linear-gradient(135deg, rgba(212, 160, 160, 0.08), rgba(212, 160, 160, 0.03));
+            border: 1px solid rgba(212, 160, 160, 0.15);
+        }
+
+        .histoire-card-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .histoire-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-dark);
+            margin-bottom: 8px;
+        }
+
+        .histoire-card .highlight {
+            font-family: var(--font-heading);
+            font-style: italic;
+            color: var(--color-gold-dark);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .histoire-card p {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .histoire-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 60px;
+        }
+
+        .histoire-center .date-badge {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--color-gold-dark);
+            background: rgba(201, 168, 124, 0.12);
+            border: 2px solid var(--color-gold);
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.1;
+        }
+
+        .histoire-center .date-badge small {
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .histoire-center .line {
+            width: 2px;
+            height: 80px;
+            background: linear-gradient(to bottom, var(--color-gold), var(--color-rose));
+        }
+
+        .histoire-quote {
+            text-align: center;
+            max-width: 650px;
+            margin: 60px auto 0;
+            font-family: var(--font-heading);
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--color-brown);
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .histoire-quote::before {
+            content: '\201C';
+            font-size: 4rem;
+            color: var(--color-gold);
+            position: absolute;
+            top: -20px;
+            left: 0;
+            line-height: 1;
+        }
+
+        /* ============================================
+           PROGRAMME
+           ============================================ */
+        #programme {
+            padding: var(--section-padding);
+            background: var(--color-bg);
+        }
+
+        .timeline {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 28px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--color-gold), var(--color-rose), var(--color-gold));
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 32px;
+            margin-bottom: 48px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 3px solid var(--color-gold);
+            background: var(--color-bg);
+            flex-shrink: 0;
+            margin-top: 6px;
+            position: relative;
+            z-index: 1;
+            margin-left: 20px;
+        }
+
+        .timeline-item[data-type="voeux"] .timeline-dot {
+            border-color: var(--color-gold);
+            box-shadow: 0 0 0 4px rgba(201, 168, 124, 0.15);
+        }
+
+        .timeline-item[data-type="anniversaire"] .timeline-dot {
+            border-color: var(--color-rose);
+            box-shadow: 0 0 0 4px rgba(212, 160, 160, 0.15);
+        }
+
+        .timeline-item[data-type="commun"] .timeline-dot {
+            background: linear-gradient(135deg, var(--color-gold), var(--color-rose));
+            border-color: transparent;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: var(--color-white);
+            padding: 28px 32px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .timeline-time {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            color: var(--color-gold-dark);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .timeline-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--color-dark);
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+        }
+
+        .timeline-badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 3px 12px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-family: var(--font-body);
+        }
+
+        .timeline-badge.voeux {
+            background: rgba(201, 168, 124, 0.12);
+            color: var(--color-gold-dark);
+        }
+
+        .timeline-badge.anniversaire {
+            background: rgba(212, 160, 160, 0.15);
+            color: #b07070;
+        }
+
+        .timeline-badge.commun {
+            background: rgba(139, 111, 92, 0.1);
+            color: var(--color-brown);
+        }
+
+        /* ============================================
+           LIEU
+           ============================================ */
+        #lieu {
+            padding: var(--section-padding);
+            background: var(--color-white);
+        }
+
+        .lieu-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .lieu-info h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--color-dark);
+            margin-bottom: 12px;
+        }
+
+        .lieu-info .address {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .lieu-info .address-icon {
+            margin-right: 8px;
+        }
+
+        .lieu-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-gold-dark);
+            border: 1.5px solid var(--color-gold);
+            padding: 12px 28px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .lieu-cta:hover {
+            background: var(--color-gold);
+            color: var(--color-white);
+        }
+
+        .lieu-map-placeholder {
+            background: var(--color-bg-alt);
+            border-radius: 16px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(201, 168, 124, 0.15);
+            color: var(--color-text-light);
+            font-size: 0.9rem;
+        }
+
+        .lieu-map-placeholder .map-icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        /* ============================================
+           INFOS PRATIQUES
+           ============================================ */
+        #infos {
+            padding: var(--section-padding);
+            background: var(--color-bg);
+        }
+
+        .infos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: var(--color-white);
+            padding: 36px;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .info-card-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .info-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            color: var(--color-dark);
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            font-size: 0.92rem;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           RSVP
+           ============================================ */
+        #rsvp {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--color-dark) 0%, #3D3230 100%);
+            color: var(--color-white);
+        }
+
+        #rsvp .section-title {
+            color: var(--color-white);
+        }
+
+        #rsvp .section-divider {
+            background: var(--color-gold);
+        }
+
+        .rsvp-intro {
+            text-align: center;
+            max-width: 550px;
+            margin: 0 auto 48px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        .rsvp-deadline {
+            color: var(--color-gold);
+            font-weight: 500;
+        }
+
+        .rsvp-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--color-white);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: border-color 0.3s, background 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group select option {
+            background: var(--color-dark);
+            color: var(--color-white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-dark);
+            background: var(--color-gold);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background: var(--color-gold-dark);
+            color: var(--color-white);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(201, 168, 124, 0.3);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            background: var(--color-dark);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem;
+        }
+
+        footer .footer-names {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-gold);
+            margin-bottom: 8px;
+        }
+
+        /* ============================================
+           ANIMATIONS (Apparition au scroll)
+           ============================================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(250, 247, 242, 0.98);
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid rgba(201, 168, 124, 0.2);
+            }
+
+            .navbar-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero-events {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .hero-separator {
+                transform: rotate(90deg);
+            }
+
+            .histoire-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .histoire-center {
+                flex-direction: row;
+                padding-top: 0;
+                gap: 16px;
+            }
+
+            .histoire-center .line {
+                width: 60px;
+                height: 2px;
+            }
+
+            .lieu-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .infos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .countdown {
+                gap: 16px;
+            }
+
+            .countdown-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- ============================================
+    <!-- ==========================================
          NAVIGATION
-         ============================================ -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#hero" class="nav-logo">N &amp; P · L</a>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
-                <span></span><span></span><span></span>
+         ========================================== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#hero" class="navbar-logo">N &amp; P <span>·</span> L</a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-            <ul class="nav-links">
+
+            <ul class="navbar-links" id="navLinks">
                 <li><a href="#histoire">Notre Histoire</a></li>
                 <li><a href="#programme">Programme</a></li>
                 <li><a href="#lieu">Lieu</a></li>
                 <li><a href="#infos">Infos</a></li>
-                <li><a href="#rsvp" class="nav-cta">RSVP</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- ============================================
-         SECTION HERO — Écran d'accueil
-         ============================================ -->
-    <header id="hero">
-        <div class="hero-overlay"></div>
+    <!-- ==========================================
+         HERO
+         ========================================== -->
+    <section id="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">Vous êtes chaleureusement invité(e) à célébrer</p>
-            <h1 class="hero-title">30 ans d'amour,<br>30 ans de vie</h1>
-            <div class="hero-details">
-                <div class="hero-event">
-                    <span class="hero-icon">💍</span>
-                    <p>Renouvellement de vœux<br><strong>Nathalie &amp; Philippe</strong><br>30 ans de mariage</p>
+            <p class="hero-subtitle-top">Vous êtes chaleureusement invité(e) à célébrer</p>
+
+            <h1 class="hero-title">
+                30 ans d'amour,<br>
+                30 ans <em>de vie</em>
+            </h1>
+
+            <!-- Double événement -->
+            <div class="hero-events">
+                <div class="hero-event-card voeux">
+                    <div class="hero-event-icon">💍</div>
+                    <p class="hero-event-label">Renouvellement de vœux</p>
+                    <p class="hero-event-names">Nathalie &amp; Philippe</p>
+                    <p class="hero-event-detail">30 ans de mariage</p>
                 </div>
-                <div class="hero-separator">✦</div>
-                <div class="hero-event">
-                    <span class="hero-icon">🎂</span>
-                    <p>Joyeux anniversaire<br><strong>Léa</strong><br>30 ans</p>
+
+                <div class="hero-separator">
+                    <span>&amp;</span>
+                </div>
+
+                <div class="hero-event-card anniversaire">
+                    <div class="hero-event-icon">🎂</div>
+                    <p class="hero-event-label">Joyeux anniversaire</p>
+                    <p class="hero-event-names">Léa</p>
+                    <p class="hero-event-detail">30 ans</p>
                 </div>
             </div>
-            <p class="hero-date">12 juillet 2026 · Domaine de la Roseraie</p>
+
+            <p class="hero-date-location">12 juillet 2026 · Domaine de la Roseraie</p>
 
             <!-- Compte à rebours -->
-            <div id="countdown" class="countdown">
+            <div class="countdown" id="countdown">
                 <div class="countdown-item">
-                    <span id="countdown-days" class="countdown-number">--</span>
-                    <span class="countdown-label">jours</span>
+                    <div class="countdown-number" id="days">--</div>
+                    <div class="countdown-label">jours</div>
                 </div>
                 <div class="countdown-item">
-                    <span id="countdown-hours" class="countdown-number">--</span>
-                    <span class="countdown-label">heures</span>
+                    <div class="countdown-number" id="hours">--</div>
+                    <div class="countdown-label">heures</div>
                 </div>
                 <div class="countdown-item">
-                    <span id="countdown-minutes" class="countdown-number">--</span>
-                    <span class="countdown-label">minutes</span>
+                    <div class="countdown-number" id="minutes">--</div>
+                    <div class="countdown-label">minutes</div>
                 </div>
                 <div class="countdown-item">
-                    <span id="countdown-seconds" class="countdown-number">--</span>
-                    <span class="countdown-label">secondes</span>
+                    <div class="countdown-number" id="seconds">--</div>
+                    <div class="countdown-label">secondes</div>
                 </div>
             </div>
 
-            <a href="#rsvp" class="btn btn-primary">Confirmer ma présence</a>
+            <a href="#rsvp" class="hero-cta">Confirmer ma présence</a>
         </div>
-    </header>
+    </section>
 
-    <!-- ============================================
-         SECTION NOTRE HISTOIRE
-         ============================================ -->
-    <section id="histoire" class="section">
+    <!-- ==========================================
+         NOTRE HISTOIRE
+         ========================================== -->
+    <section id="histoire">
         <div class="container">
-            <h2 class="section-title">Notre Histoire</h2>
-            <p class="section-subtitle">Une date, une double joie</p>
+            <h2 class="section-title fade-in">Notre Histoire</h2>
+            <div class="section-divider fade-in"></div>
+
+            <p class="histoire-intro fade-in">
+                Le 12 juillet 1996, deux histoires ont commencé le même jour.
+                L'une dans une mairie, l'autre dans une maternité.
+                Trente ans plus tard, nous les célébrons ensemble.
+            </p>
 
             <div class="histoire-grid">
-                <!-- Colonne Parents -->
-                <div class="histoire-card fade-in">
-                    <div class="histoire-icon">💍</div>
+                <!-- Colonne gauche : Le couple -->
+                <div class="histoire-card voeux-card fade-in">
+                    <div class="histoire-card-icon">💒</div>
                     <h3>Nathalie &amp; Philippe</h3>
-                    <p class="histoire-date-badge">12 juillet 1996</p>
-                    <p>Il y a 30 ans, Nathalie et Philippe se disaient « oui » dans la petite église de Chasselay. Depuis, leur amour n'a cessé de grandir, porté par les rires, les épreuves surmontées ensemble et une complicité à toute épreuve.</p>
-                    <p>Aujourd'hui, ils souhaitent renouveler leurs vœux devant ceux qui comptent le plus : <strong>vous</strong>.</p>
+                    <p class="highlight">Mariés le 12 juillet 1996</p>
+                    <p>
+                        Il y a trente ans, ils se sont dit oui dans la petite église de
+                        Sainte-Foy-lès-Lyon. Depuis, ils ont traversé ensemble les joies,
+                        les épreuves et les rires d'une vie partagée. Aujourd'hui, ils
+                        souhaitent renouveler ces vœux devant ceux qu'ils aiment, pour
+                        célébrer un amour qui n'a fait que grandir.
+                    </p>
                 </div>
 
-                <!-- Séparateur central -->
-                <div class="histoire-separator fade-in">
-                    <div class="histoire-line"></div>
-                    <div class="histoire-badge">12·07</div>
-                    <div class="histoire-line"></div>
+                <!-- Centre : Date -->
+                <div class="histoire-center fade-in">
+                    <div class="line"></div>
+                    <div class="date-badge">
+                        <span>12·07</span>
+                        <small>1996</small>
+                    </div>
+                    <div class="line"></div>
                 </div>
 
-                <!-- Colonne Léa -->
-                <div class="histoire-card fade-in">
-                    <div class="histoire-icon">🎂</div>
+                <!-- Colonne droite : Léa -->
+                <div class="histoire-card anniversaire-card fade-in">
+                    <div class="histoire-card-icon">✨</div>
                     <h3>Léa</h3>
-                    <p class="histoire-date-badge">12 juillet 1996</p>
-                    <p>Le jour même de leur mariage, Nathalie et Philippe ont reçu le plus beau cadeau imaginable : la naissance de Léa. Depuis 30 ans, elle illumine leurs vies de sa joie de vivre et de son énergie contagieuse.</p>
-                    <p>Quoi de mieux que de célébrer <strong>ensemble</strong> ces deux événements qui partagent la même date magique ?</p>
+                    <p class="highlight">Née le 12 juillet 1996</p>
+                    <p>
+                        Le jour même de leur mariage — ou presque —, la vie leur a offert
+                        un cadeau inattendu. Léa est arrivée dans ce monde le même été,
+                        liant à jamais ces deux célébrations. Trente ans plus tard, elle
+                        fête cette étape avec ceux qui comptent le plus.
+                    </p>
                 </div>
             </div>
 
-            <blockquote class="histoire-quote fade-in">
-                « Le 12 juillet 1996, nous avons dit oui à l'amour… et la vie nous a offert Léa en prime. Trente ans plus tard, nous avons deux fois plus de raisons de faire la fête ! »
-                <cite>— Nathalie &amp; Philippe</cite>
-            </blockquote>
+            <p class="histoire-quote fade-in">
+                Nous avons dit oui à l'amour… et la vie nous a offert Léa en prime.
+                Il était temps de fêter ça comme il se doit.
+            </p>
         </div>
     </section>
 
-    <!-- ============================================
-         SECTION PROGRAMME
-         ============================================ -->
-    <section id="programme" class="section section-alt">
+    <!-- ==========================================
+         PROGRAMME
+         ========================================== -->
+    <section id="programme">
         <div class="container">
-            <h2 class="section-title">Programme de la Journée</h2>
-            <p class="section-subtitle">Une journée, deux célébrations, mille souvenirs</p>
+            <h2 class="section-title fade-in">Programme de la journée</h2>
+            <div class="section-divider fade-in"></div>
 
             <div class="timeline">
-                <!-- Événement 1 -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">14h00</div>
+                <!-- 14h00 -->
+                <div class="timeline-item" data-type="commun">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <span class="timeline-icon">🥂</span>
-                        <h3>Accueil des invités</h3>
-                        <p>Réception au jardin avec rafraîchissements et retrouvailles</p>
+                        <div class="timeline-time">14h00</div>
+                        <div class="timeline-title">Accueil des invités</div>
+                        <div class="timeline-desc">Rafraîchissements et retrouvailles dans les jardins du domaine.</div>
+                        <span class="timeline-badge commun">Tous ensemble</span>
                     </div>
                 </div>
 
-                <!-- Événement 2 -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">15h00</div>
+                <!-- 15h00 -->
+                <div class="timeline-item" data-type="voeux">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <span class="timeline-icon">💍</span>
-                        <h3>Cérémonie de renouvellement de vœux</h3>
-                        <p>Nathalie &amp; Philippe renouvellent leurs promesses sous la pergola fleurie du domaine</p>
-                        <span class="timeline-badge badge-voeux">Renouvellement de vœux</span>
+                        <div class="timeline-time">15h00</div>
+                        <div class="timeline-title">Cérémonie de renouvellement de vœux</div>
+                        <div class="timeline-desc">Nathalie &amp; Philippe renouvellent leurs promesses, trente ans après leur premier « oui ».</div>
+                        <span class="timeline-badge voeux">💍 Renouvellement de vœux</span>
                     </div>
                 </div>
 
-                <!-- Événement 3 -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">16h30</div>
+                <!-- 16h00 -->
+                <div class="timeline-item" data-type="anniversaire">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <span class="timeline-icon">🎂</span>
-                        <h3>Cocktail &amp; Anniversaire de Léa</h3>
-                        <p>Toast aux 30 ans de Léa, photos de famille et cocktail gourmand</p>
-                        <span class="timeline-badge badge-anniv">30 ans de Léa</span>
+                        <div class="timeline-time">16h00</div>
+                        <div class="timeline-title">Cocktail, toasts &amp; gâteau</div>
+                        <div class="timeline-desc">Champagne, discours, surprises et le fameux gâteau d'anniversaire de Léa !</div>
+                        <span class="timeline-badge anniversaire">🎂 Anniversaire de Léa</span>
                     </div>
                 </div>
 
-                <!-- Événement 4 -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">19h00</div>
+                <!-- 19h00 -->
+                <div class="timeline-item" data-type="commun">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <span class="timeline-icon">🍽️</span>
-                        <h3>Dîner de fête</h3>
-                        <p>Repas gastronomique dans l'orangerie du domaine, accompagné de surprises et discours</p>
+                        <div class="timeline-time">19h00</div>
+                        <div class="timeline-title">Dîner de fête</div>
+                        <div class="timeline-desc">Repas gastronomique sous les étoiles, dans l'orangerie du domaine.</div>
+                        <span class="timeline-badge commun">Tous ensemble</span>
                     </div>
                 </div>
 
-                <!-- Événement 5 -->
-                <div class="timeline-item fade-in">
-                    <div class="timeline-time">22h00</div>
+                <!-- 22h00 -->
+                <div class="timeline-item" data-type="commun">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <span class="timeline-icon">💃</span>
-                        <h3>Soirée dansante</h3>
-                        <p>Musique, piste de danse et photobooth jusqu'au bout de la nuit !</p>
+                        <div class="timeline-time">22h00</div>
+                        <div class="timeline-title">Soirée dansante</div>
+                        <div class="timeline-desc">Musique, rires et souvenirs jusqu'au bout de la nuit. Ouverture de bal par Nathalie &amp; Philippe !</div>
+                        <span class="timeline-badge commun">Tous ensemble</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-         SECTION LIEU
-         ============================================ -->
-    <section id="lieu" class="section">
+    <!-- ==========================================
+         LIEU
+         ========================================== -->
+    <section id="lieu">
         <div class="container">
-            <h2 class="section-title">Le Lieu</h2>
-            <p class="section-subtitle">Un cadre enchanteur pour une journée inoubliable</p>
+            <h2 class="section-title fade-in">Le Lieu</h2>
+            <div class="section-divider fade-in"></div>
 
-            <div class="lieu-grid">
-                <div class="lieu-info fade-in">
+            <div class="lieu-content fade-in">
+                <div class="lieu-info">
                     <h3>Domaine de la Roseraie</h3>
-                    <p class="lieu-adresse">
-                        📍 245 Chemin des Vignes<br>
-                        69380 Chasselay<br>
-                        Beaujolais, près de Lyon
+                    <p class="address">
+                        <span class="address-icon">📍</span>
+                        245 chemin des Vignes<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;69380 Lissieu<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Auvergne-Rhône-Alpes
                     </p>
-                    <ul class="lieu-details">
-                        <li>🅿️ Parking gratuit sur place</li>
-                        <li>♿ Accès PMR disponible</li>
-                        <li>🌳 Parc arboré de 3 hectares</li>
-                    </ul>
-                    <a href="https://maps.google.com/?q=Domaine+de+la+Roseraie+Chasselay" target="_blank" rel="noopener" class="btn btn-secondary">
-                        Ouvrir dans Google Maps
+                    <p class="address">
+                        <span class="address-icon">🚗</span>
+                        À 20 minutes de Lyon centre<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Parking gratuit sur place
+                    </p>
+                    <a href="https://maps.google.com/?q=Domaine+de+la+Roseraie+Lissieu" target="_blank" rel="noopener" class="lieu-cta">
+                        📍 Voir sur Google Maps
                     </a>
                 </div>
-                <div class="lieu-map fade-in">
-                    <!-- MODIFIABLE : Remplacez l'URL src par votre propre embed Google Maps -->
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.5!2d4.77!3d45.87!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDUyJzEyLjAiTiA0wrA0NiczNi4wIkU!5e0!3m2!1sfr!2sfr!4v1"
-                        width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
-                        title="Carte du Domaine de la Roseraie">
-                    </iframe>
+
+                <div class="lieu-map-placeholder">
+                    <div class="map-icon">🗺️</div>
+                    <p>Carte interactive</p>
+                    <p style="font-size: 0.8rem; margin-top: 8px; opacity: 0.6;">
+                        (Remplacez ce bloc par une iframe Google Maps)
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-         SECTION INFOS PRATIQUES
-         ============================================ -->
-    <section id="infos" class="section section-alt">
+    <!-- ==========================================
+         INFOS PRATIQUES
+         ========================================== -->
+    <section id="infos">
         <div class="container">
-            <h2 class="section-title">Infos Pratiques</h2>
-            <p class="section-subtitle">Tout ce qu'il faut savoir pour profiter pleinement de la journée</p>
+            <h2 class="section-title fade-in">Infos Pratiques</h2>
+            <div class="section-divider fade-in"></div>
 
             <div class="infos-grid">
                 <div class="info-card fade-in">
-                    <div class="info-icon">👗</div>
-                    <h3>Dress Code</h3>
-                    <p>Tenue de cocktail — couleurs douces et pastels appréciées. Prévoyez des chaussures adaptées au jardin !</p>
+                    <div class="info-card-icon">👗</div>
+                    <h3>Dress code</h3>
+                    <p>Tenue de cocktail — Couleurs douces et estivales. Pensez au confort : la soirée se prolongera sur l'herbe et la piste de danse !</p>
                 </div>
+
                 <div class="info-card fade-in">
-                    <div class="info-icon">🏨</div>
+                    <div class="info-card-icon">🏨</div>
                     <h3>Hébergement</h3>
-                    <p>Hôtels et chambres d'hôtes à proximité : une liste de suggestions vous sera envoyée avec la confirmation.</p>
+                    <p>Plusieurs hôtels et chambres d'hôtes se trouvent à proximité du domaine. Une liste de suggestions vous sera envoyée avec la confirmation de votre RSVP.</p>
                 </div>
+
                 <div class="info-card fade-in">
-                    <div class="info-icon">👶</div>
+                    <div class="info-card-icon">👶</div>
                     <h3>Enfants</h3>
-                    <p>Les enfants sont les bienvenus ! Un espace jeux avec animateur sera prévu pour les petits.</p>
+                    <p>Les enfants sont les bienvenus ! Un espace jeux et une baby-sitter seront prévus pour qu'ils profitent aussi de la fête.</p>
                 </div>
+
                 <div class="info-card fade-in">
-                    <div class="info-icon">🎁</div>
+                    <div class="info-card-icon">🎁</div>
                     <h3>Cadeaux</h3>
-                    <p>Votre présence est le plus beau des cadeaux. Si vous souhaitez contribuer, une cagnotte sera disponible sur place.</p>
+                    <p>Votre présence est le plus beau des cadeaux. Si vous souhaitez malgré tout contribuer, une cagnotte sera disponible sur place.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-         SECTION RSVP
-         ============================================ -->
-    <section id="rsvp" class="section">
+    <!-- ==========================================
+         RSVP
+         ========================================== -->
+    <section id="rsvp">
         <div class="container">
-            <h2 class="section-title">Confirmez votre Présence</h2>
-            <p class="section-subtitle">Merci de répondre avant le <strong>15 juin 2026</strong></p>
+            <h2 class="section-title fade-in">Confirmez votre présence</h2>
+            <div class="section-divider fade-in"></div>
 
-            <!-- MODIFIABLE : Remplacez l'action par votre endpoint Formspree, Netlify Forms, etc. -->
-            <form id="rsvp-form" class="rsvp-form fade-in" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <p class="rsvp-intro fade-in">
+                Merci de nous confirmer votre venue avant le
+                <span class="rsvp-deadline">15 juin 2026</span>.
+                Nous avons hâte de partager cette journée avec vous !
+            </p>
 
+            <!-- 
+                FORMULAIRE RSVP
+                ================
+                Par défaut, le formulaire utilise Formspree (https://formspree.io).
+                1. Créez un compte gratuit sur formspree.io
+                2. Créez un nouveau formulaire
+                3. Remplacez "YOUR_FORM_ID" par votre identifiant
+                
+                Alternative : remplacez l'action par un lien Google Forms 
+                ou traitez le formulaire via Netlify Forms.
+            -->
+            <form class="rsvp-form fade-in" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="rsvpForm">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="nom">Nom complet *</label>
-                        <input type="text" id="nom" name="nom" required placeholder="Votre nom et prénom">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" required placeholder="votre@email.fr">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
                     </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="votre@email.com" required>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="presence">Serez-vous présent(e) ? *</label>
+                        <label for="presence">Présence</label>
                         <select id="presence" name="presence" required>
-                            <option value="">— Choisissez —</option>
-                            <option value="oui">Oui, avec joie !</option>
-                            <option value="non">Malheureusement non</option>
+                            <option value="" disabled selected>Choisissez...</option>
+                            <option value="oui">J'y serai avec plaisir !</option>
+                            <option value="non">Je ne pourrai malheureusement pas</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="accompagnants">Nombre d'accompagnants</label>
                         <select id="accompagnants" name="accompagnants">
-                            <option value="0">Je viens seul(e)</option>
+                            <option value="0">Juste moi</option>
                             <option value="1">+1 personne</option>
                             <option value="2">+2 personnes</option>
                             <option value="3">+3 personnes</option>
-                            <option value="4">+4 personnes</option>
+                            <option value="4+">+4 ou plus</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="allergies">Allergies ou régime alimentaire</label>
-                    <input type="text" id="allergies" name="allergies" placeholder="Végétarien, sans gluten, allergies...">
+                    <input type="text" id="allergies" name="allergies" placeholder="Végétarien, sans gluten, allergie aux noix...">
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Un petit mot pour la famille</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Votre message pour Nathalie, Philippe et Léa..."></textarea>
+                    <label for="message">Un petit mot (optionnel)</label>
+                    <textarea id="message" name="message" placeholder="Votre message pour Nathalie, Philippe et Léa..."></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-submit">
-                    Envoyer ma réponse
-                </button>
+                <button type="submit" class="form-submit">Envoyer ma réponse</button>
             </form>
-
-            <div id="rsvp-success" class="rsvp-success" style="display: none;">
-                <span class="success-icon">🎉</span>
-                <h3>Merci pour votre réponse !</h3>
-                <p>Nous avons bien reçu votre confirmation. Au plaisir de vous retrouver le 12 juillet !</p>
-            </div>
-
-            <div class="rsvp-contact">
-                <p>Une question ? Contactez-nous :</p>
-                <p>📧 <a href="mailto:fete-dumont@exemple.fr">fete-dumont@exemple.fr</a> · 📞 06 12 34 56 78</p>
-            </div>
         </div>
     </section>
 
-    <!-- ============================================
+    <!-- ==========================================
          FOOTER
-         ============================================ -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-names">Nathalie &amp; Philippe · Léa</p>
-            <p class="footer-date">12 juillet 2026</p>
-            <p class="footer-tagline">30 ans d'amour, 30 ans de vie ✨</p>
-        </div>
+         ========================================== -->
+    <footer>
+        <p class="footer-names">Nathalie &amp; Philippe · Léa</p>
+        <p>12 juillet 2026 — Domaine de la Roseraie</p>
+        <p style="margin-top: 8px;">Fait avec ❤️ pour 30 ans de bonheur</p>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+    <script>
+        /* ============================================
+           CONFIGURATION — Modifiez la date ici
+           ============================================ */
+        // Format : Année, Mois (0-11), Jour, Heure, Minute
+        const EVENT_DATE = new Date(2026, 6, 12, 14, 0, 0); // 12 juillet 2026 à 14h00
+
+        /* ============================================
+           COMPTE À REBOURS
+           ============================================ */
+        function updateCountdown() {
+            const now = new Date();
+            const diff = EVENT_DATE - now;
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '0';
+                document.getElementById('hours').textContent = '0';
+                document.getElementById('minutes').textContent = '0';
+                document.getElementById('seconds').textContent = '0';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(mins).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(secs).padStart(2, '0');
+        }
+
+        // Mettre à jour chaque seconde
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        /* ============================================
+           NAVIGATION — Scroll effect
+           ============================================ */
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        /* ============================================
+           NAVIGATION — Menu mobile
+           ============================================ */
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fermer le menu au clic sur un lien
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        /* ============================================
+           ANIMATIONS — Apparition au scroll
+           ============================================ */
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments avec la classe .fade-in et .timeline-item
+        document.querySelectorAll('.fade-in, .timeline-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        /* ============================================
+           FORMULAIRE RSVP — Feedback visuel
+           ============================================ */
+        const rsvpForm = document.getElementById('rsvpForm');
+
+        rsvpForm.addEventListener('submit', function(e) {
+            // Si Formspree n'est pas configuré, empêcher l'envoi
+            if (this.action.includes('YOUR_FORM_ID')) {
+                e.preventDefault();
+                alert('✨ Merci pour votre réponse !\n\n(Note : le formulaire n\'est pas encore configuré.\nRemplacez YOUR_FORM_ID dans le code par votre identifiant Formspree.)');
+                return;
+            }
+        });
+    </script>
+
 </body>
 </html>
