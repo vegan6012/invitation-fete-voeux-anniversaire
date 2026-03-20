@@ -1,73 +1,72 @@
 {
-  "titre": "30 ans d'amour,\n30 ans de vie",
+  "titre": "30 ans de vie à deux,\n30 ans de vie tout court",
   "sousTitre": "On fête tout ça ensemble !",
-  "date": "12 juillet 2026",
-  "dateISO": "2026-07-12T15:00:00",
+  "date": "29 août 2026",
+  "dateISO": "2026-08-29T15:00:00",
   "lieu": {
-    "nom": "Domaine de la Roseraie",
-    "adresse": "245 chemin des Vignes, 69380 Lissieu",
-    "lienMaps": "https://maps.google.com/?q=Domaine+de+la+Roseraie+Lissieu",
-    "indication": "Parking sur place · Accès fléché depuis la D306"
+    "nom": "Les carrières de Montigny",
+    "adresse": "VC Ham. de Montigny, 60150 Machemont",
+    "lienMaps": "https://maps.app.goo.gl/5wD2X44whd5BwLsb7",
+    "indication": "Parking sur place· Si vous vous perdez, suivez les gens bien habillés"
   },
   "parents": {
-    "prenom1": "Nathalie",
-    "prenom2": "Philippe",
+    "prenom1": "Céline",
+    "prenom2": "Laurent",
     "anneesMariage": 30,
-    "dateMariage": "20 août 1996"
+    "dateMariage": "12 décemnbre 1996"
   },
   "enfant": {
-    "prenom": "Léa",
+    "prenom": "Mathieu",
     "age": 30,
-    "dateAnniversaire": "3 novembre 1996"
+    "dateAnniversaire": "12 octobre 1996"
   },
   "programme": [
     {
-      "heure": "15h00",
+      "heure": "14h30",
       "titre": "Accueil & Retrouvailles",
-      "description": "On se retrouve au domaine, verre de bienvenue à la main 🥂",
+      "description": "On arrive, on s'embrasse, on se dit qu'on ne change pas... même si tout le monde a clairement changé 🥂",
       "emoji": "🥂",
       "type": "commun"
     },
     {
-      "heure": "16h00",
-      "titre": "Cérémonie de renouvellement",
-      "description": "Nathalie & Philippe se redisent oui, 30 ans après 💍",
+      "heure": "15h00",
+      "titre": "Renouvellement des voeux",
+      "description": "Céline et Laurent remettent ça 30 ans après. Cette fois, ils savent vraiment dans quoi ils s'engagent 💍",
       "emoji": "💍",
       "type": "voeux"
     },
     {
-      "heure": "17h00",
-      "titre": "Cocktail & Surprises",
-      "description": "Bulles, petits fours et peut-être quelques discours émouvants",
+      "heure": "16h00",
+      "titre": "Cocktail & Petites surprises",
+      "description": "Verres levés, bouchées délicieuses et quelques surprises. Oui, il y aura probablement de l'émotion. Et peut-être un micro qui grésille 🍾",
       "emoji": "🍾",
       "type": "commun"
     },
     {
       "heure": "19h30",
       "titre": "Dîner",
-      "description": "On passe à table, menu du chef et bonne humeur garantie",
+      "description": "On passe à table pour manger, rire et vérifier une bonne fois pour toutes qui prend toujours la dernière pomme de terre 🍽️",
       "emoji": "🍽️",
       "type": "commun"
     },
     {
       "heure": "21h00",
       "titre": "Gâteau & Bougies pour Léa",
-      "description": "30 bougies à souffler — poumons solides exigés 🎂",
+      "description": "Léa souffle ses 30 bougies. On espère que quelqu'un a pensé à prévenir les détecteurs de fumée 🎂",
       "emoji": "🎂",
       "type": "anniversaire"
     },
     {
       "heure": "21h30",
       "titre": "Soirée dansante",
-      "description": "DJ, piste de danse et souvenirs inoubliables jusqu'au bout de la nuit 🪩",
+      "description": "Place à la piste de danse. Les genoux fragiles sont acceptés, les mauvais pas aussi, l'important c'est l'engagement 🪩",
       "emoji": "🪩",
       "type": "commun"
     }
   ],
   "infos": {
-    "dressCode": "Tenue de fête — soyez beaux, soyez vous !",
-    "enfants": "Les enfants sont les bienvenus 👶",
+    "dressCode": "Tenue de fête. Élégant, confortable, et compatible avec un repas copieux et quelques pas de danse. Si vous voulez venir en dinausore, ça marche aussi",
     "contact": "Léa — 06 12 34 56 78",
-    "mot": "Pas de liste de cadeaux, votre présence est le plus beau des cadeaux. Mais si vous insistez… une cagnotte sera disponible sur place 😉"
+    "mot": "Pas de liste de cadeaux, votre présence nous fait déjà très plaisir. Mais pour les plus déterminés, une cagnotte sera disponible sur place, discrètement... ou pas 😉"
   }
 }
