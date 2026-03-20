@@ -1,79 +1,73 @@
 {
-  "meta": {
-    "titre_site": "30 ans d'amour, 30 ans de vie",
-    "description": "Invitation au renouvellement de vœux de Nathalie & Philippe et aux 30 ans de Léa"
-  },
-  "evenement": {
-    "type_1": "Renouvellement de vœux — 30 ans de mariage",
-    "type_2": "Anniversaire — 30 ans de Léa",
-    "date": "12 juillet 2026",
-    "date_iso": "2026-07-12T14:00:00",
-    "heure_debut": "14h00",
-    "heure_fin": "02h00"
-  },
-  "famille": {
-    "parents": {
-      "prenom_1": "Nathalie",
-      "prenom_2": "Philippe",
-      "nom_famille": "Dumont",
-      "date_mariage": "12 juillet 1996",
-      "annees_mariage": 30
-    },
-    "enfant": {
-      "prenom": "Léa",
-      "date_naissance": "12 juillet 1996",
-      "age": 30
-    }
-  },
+  "titre": "30 ans d'amour,\n30 ans de vie",
+  "sousTitre": "On fête tout ça ensemble !",
+  "date": "12 juillet 2026",
+  "dateISO": "2026-07-12T15:00:00",
   "lieu": {
     "nom": "Domaine de la Roseraie",
-    "adresse": "245 Chemin des Vignes, 69380 Chasselay",
-    "region": "Beaujolais, près de Lyon",
-    "lien_maps": "https://maps.google.com/?q=Domaine+de+la+Roseraie+Chasselay",
-    "parking": true,
-    "acces_pmr": true
+    "adresse": "245 chemin des Vignes, 69380 Lissieu",
+    "lienMaps": "https://maps.google.com/?q=Domaine+de+la+Roseraie+Lissieu",
+    "indication": "Parking sur place · Accès fléché depuis la D306"
+  },
+  "parents": {
+    "prenom1": "Nathalie",
+    "prenom2": "Philippe",
+    "anneesMariage": 30,
+    "dateMariage": "20 août 1996"
+  },
+  "enfant": {
+    "prenom": "Léa",
+    "age": 30,
+    "dateAnniversaire": "3 novembre 1996"
   },
   "programme": [
     {
-      "heure": "14h00",
-      "titre": "Accueil des invités",
-      "description": "Réception au jardin avec rafraîchissements",
-      "icone": "🥂"
-    },
-    {
       "heure": "15h00",
-      "titre": "Cérémonie de renouvellement de vœux",
-      "description": "Nathalie & Philippe renouvellent leurs vœux sous la pergola",
-      "icone": "💍"
+      "titre": "Accueil & Retrouvailles",
+      "description": "On se retrouve au domaine, verre de bienvenue à la main 🥂",
+      "emoji": "🥂",
+      "type": "commun"
     },
     {
-      "heure": "16h30",
-      "titre": "Cocktail & anniversaire de Léa",
-      "description": "Toast aux 30 ans de Léa, photos de famille et cocktail",
-      "icone": "🎂"
+      "heure": "16h00",
+      "titre": "Cérémonie de renouvellement",
+      "description": "Nathalie & Philippe se redisent oui, 30 ans après 💍",
+      "emoji": "💍",
+      "type": "voeux"
     },
     {
-      "heure": "19h00",
-      "titre": "Dîner de fête",
-      "description": "Repas gastronomique dans l'orangerie du domaine",
-      "icone": "🍽️"
+      "heure": "17h00",
+      "titre": "Cocktail & Surprises",
+      "description": "Bulles, petits fours et peut-être quelques discours émouvants",
+      "emoji": "🍾",
+      "type": "commun"
     },
     {
-      "heure": "22h00",
+      "heure": "19h30",
+      "titre": "Dîner",
+      "description": "On passe à table, menu du chef et bonne humeur garantie",
+      "emoji": "🍽️",
+      "type": "commun"
+    },
+    {
+      "heure": "21h00",
+      "titre": "Gâteau & Bougies pour Léa",
+      "description": "30 bougies à souffler — poumons solides exigés 🎂",
+      "emoji": "🎂",
+      "type": "anniversaire"
+    },
+    {
+      "heure": "21h30",
       "titre": "Soirée dansante",
-      "description": "Musique, piste de danse et photobooth jusqu'au bout de la nuit",
-      "icone": "💃"
+      "description": "DJ, piste de danse et souvenirs inoubliables jusqu'au bout de la nuit 🪩",
+      "emoji": "🪩",
+      "type": "commun"
     }
   ],
-  "infos_pratiques": {
-    "dress_code": "Tenue de cocktail — couleurs douces et pastels appréciées",
-    "hebergement": "Hôtel & chambres d'hôtes à proximité : liste envoyée avec la confirmation",
-    "enfants": "Les enfants sont les bienvenus — espace jeux prévu",
-    "cadeaux": "Votre présence est le plus beau des cadeaux. Si vous souhaitez contribuer, une cagnotte sera disponible sur place."
-  },
-  "rsvp": {
-    "date_limite": "15 juin 2026",
-    "email_contact": "fete-dumont@exemple.fr",
-    "telephone": "06 12 34 56 78"
+  "infos": {
+    "dressCode": "Tenue de fête — soyez beaux, soyez vous !",
+    "enfants": "Les enfants sont les bienvenus 👶",
+    "contact": "Léa — 06 12 34 56 78",
+    "mot": "Pas de liste de cadeaux, votre présence est le plus beau des cadeaux. Mais si vous insistez… une cagnotte sera disponible sur place 😉"
   }
 }
