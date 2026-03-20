@@ -110,7 +110,8 @@
             color: #888;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 15px;
+            /* ====== MODIFICATION : plus d'espace après le sous-titre ====== */
+            margin-bottom: 50px;
         }
 
         #hero-titre {
@@ -384,6 +385,165 @@
         }
 
         /* ============================================
+           HÉBERGEMENT (nouvelle section)
+           ============================================ */
+        #hebergement {
+            background: white;
+        }
+
+        .hebergement-intro {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            text-align: center;
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .hebergement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hebergement-card {
+            background: #FAFAFA;
+            border-radius: 16px;
+            padding: 30px;
+            border-left: 4px solid #7EB8C9;
+            transition: transform 0.3s;
+        }
+
+        .hebergement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hebergement-card .heberg-icone {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .hebergement-card .heberg-nom {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 6px;
+        }
+
+        .hebergement-card .heberg-desc {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .hebergement-card .heberg-prix {
+            font-size: 0.85rem;
+            color: #C9A87C;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .heberg-link {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #7EB8C9;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .heberg-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(126, 184, 201, 0.4);
+        }
+
+        /* ============================================
+           RSVP / PRÉVENIR (nouvelle section)
+           ============================================ */
+        #rsvp {
+            background: #FAFAFA;
+            text-align: center;
+        }
+
+        .rsvp-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 50px 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            border-top: 4px solid #E8B4C8;
+        }
+
+        .rsvp-box .rsvp-icone {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .rsvp-box .rsvp-titre {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .rsvp-box .rsvp-date-limite {
+            font-size: 1.1rem;
+            color: #C9A87C;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .rsvp-box .rsvp-texte {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .rsvp-contacts {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .rsvp-contact-card {
+            background: #FAFAFA;
+            border-radius: 12px;
+            padding: 20px 30px;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .rsvp-contact-card .contact-nom {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
+        }
+
+        .rsvp-contact-card .contact-tel {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .rsvp-contact-card .contact-tel a {
+            color: #7EB8C9;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .rsvp-contact-card .contact-tel a:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================
            INFOS PRATIQUES
            ============================================ */
         #infos {
@@ -450,6 +610,21 @@
             font-size: 0.85rem;
         }
 
+        .footer-contacts {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+
+        .footer-contacts a {
+            color: #C9A87C;
+            text-decoration: none;
+        }
+
+        .footer-contacts a:hover {
+            text-decoration: underline;
+        }
+
         /* ============================================
            RESPONSIVE
            ============================================ */
@@ -484,6 +659,19 @@
                 font-size: 1rem;
                 min-width: 60px;
             }
+
+            .rsvp-box {
+                padding: 35px 25px;
+            }
+
+            .rsvp-contacts {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hebergement-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -501,6 +689,8 @@
         <ul>
             <li><a href="#programme">Programme</a></li>
             <li><a href="#lieu">Lieu</a></li>
+            <li><a href="#hebergement">Hébergement</a></li>
+            <li><a href="#rsvp">Confirmer</a></li>
             <li><a href="#infos">Infos</a></li>
         </ul>
     </nav>
@@ -509,7 +699,6 @@
          HERO
          ========================================== -->
     <section id="hero">
-        
         <h1 id="hero-titre"></h1>
         <p id="hero-sous-titre"></p>
 
@@ -589,6 +778,32 @@
     </section>
 
     <!-- ==========================================
+         HÉBERGEMENT (nouvelle section)
+         ========================================== -->
+    <section id="hebergement">
+        <h2 class="section-title">Hébergement</h2>
+        <p class="hebergement-intro" id="hebergement-intro"></p>
+        <div class="hebergement-grid" id="hebergement-grid">
+            <!-- Rempli dynamiquement par JS -->
+        </div>
+    </section>
+
+    <!-- ==========================================
+         RSVP / PRÉVENIR (nouvelle section)
+         ========================================== -->
+    <section id="rsvp">
+        <div class="rsvp-box">
+            <div class="rsvp-icone">📬</div>
+            <div class="rsvp-titre" id="rsvp-titre"></div>
+            <div class="rsvp-date-limite" id="rsvp-date-limite"></div>
+            <div class="rsvp-texte" id="rsvp-texte"></div>
+            <div class="rsvp-contacts" id="rsvp-contacts">
+                <!-- Rempli dynamiquement par JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
          INFOS PRATIQUES
          ========================================== -->
     <section id="infos">
@@ -604,6 +819,7 @@
     <footer>
         <p id="footer-noms"></p>
         <p id="footer-annee"></p>
+        <div class="footer-contacts" id="footer-contacts"></div>
     </footer>
 
     <!-- ==========================================
@@ -614,10 +830,8 @@
            DONNÉES DE L'ÉVÉNEMENT
            ==============================================
            *** MODIFIEZ ICI pour personnaliser le site ***
-           Toutes les données sont dans cet objet DATA.
-           Changez les valeurs, sauvegardez, rechargez.
            ============================================== */
-        const DATA = {
+        var DATA = {
             hero: {
                 titre: "30 ans de vie à deux,\n30 ans de vie tout court",
                 sousTitre: "Et on fête ça ensemble !",
@@ -626,7 +840,7 @@
             },
             couple: {
                 prenom1: "Céline",
-                prenom2: "Mathieu",
+                prenom2: "Laurent",
                 label: "Renouvellement de vœux",
                 detail: "30 ans de mariage",
                 dateMariage: "12 décembre 1996"
@@ -639,71 +853,121 @@
             },
             programme: [
                 {
+                    heure: "14h30",
+                    titre: "Accueil & Retrouvailles",
+                    description: "On arrive, on s'embrasse. Et on essaye de pas arriver en avance.",
+                    type: "voeux",
+                    icone: "🤗"
+                },
+                {
                     heure: "15h00",
                     titre: "Cérémonie de renouvellement de vœux",
-                    description: "Céline & Laurent se redisent oui, 30 ans après.",
+                    description: "30 ans de mariage, 1h de cérémonie. Ça va être dense !",
                     type: "voeux",
                     icone: "💍"
                 },
                 {
                     heure: "16h00",
                     titre: "Vin d'honneur & cocktail",
-                    description: "Champagne, petits fours et retrouvailles.",
-                    type: "commun",
+                    description: "Champagne, petits gâteaux et mouchoirs si on a pleuré.",
+                    type: "voeux",
                     icone: "🥂"
                 },
                 {
-                    heure: "17h30",
-                    titre: "Jeux & animations",
-                    description: "Quiz sur les 30 ans du couple et les 30 ans de Mathieu.",
+                    heure: "17h00",
+                    titre: "Visite du site",
+                    description: "Visite par un type super sympa (il paraît)",
                     type: "commun",
-                    icone: "🎲"
+                    icone: "📣"
                 },
                 {
-                    heure: "19h30",
-                    titre: "Dîner",
-                    description: "Repas gastronomique tous ensemble.",
+                    heure: "18h00",
+                    titre: "On lance la fête !",
+                    description: "Début des festivités pour fêter la cérémonie et l'anniversaire.",
                     type: "commun",
-                    icone: "🍽️"
+                    icone: "🥳"
                 },
                 {
-                    heure: "21h00",
-                    titre: "Gâteau & soufflage de bougies",
-                    description: "30 bougies pour Mathieu, et une pièce montée pour le couple !",
-                    type: "anniversaire",
-                    icone: "🎂"
-                },
-                {
-                    heure: "22h00",
-                    titre: "Soirée dansante",
-                    description: "DJ, piste de danse et photobooth.",
+                    heure: "???",
+                    titre: "Surprise",
+                    description: "...",
                     type: "commun",
-                    icone: "💃"
+                    icone: "🕵️"
                 }
             ],
             lieu: {
                 nom: "Les Carrières de Montigny",
                 adresse: "VC Ham. de Montigny, 60150 Machemont",
                 lienMaps: "https://maps.app.goo.gl/5wD2X44whd5BwLsb7",
-                indication: "Parking gratuit sur place. Si vous êtes perdu, cherchez les autres voitures. Si vous souhaitez venir en train, il faudra s'organiser pour que quelqu'un vienne vous chercher. La gare la plus proche est à Thouroote"
+                indication: "Parking gratuit sur place. Si vous êtes perdu, cherchez les autres voitures."
+            },
+            hebergement: {
+                intro: "La fête risque de se terminer tard, alors voici quelques options pour dormir sur place ou à proximité. Pensez à réserver en avance !",
+                options: [
+                    {
+                        icone: "🏕️",
+                        nom: "Camping sur place",
+                        description: "Un coin sera aménagé pour planter votre tente. Amenez votre matériel !",
+                        prix: "Gratuit",
+                        lien: "",
+                        lienTexte: ""
+                    },
+                    {
+                        icone: "🏨",
+                        nom: "Hôtel & B&B à Compiègne",
+                        description: "Plusieurs hôtels et chambres d'hôtes à 15 min en voiture. On recommande le Kyriad ou l'ibis.",
+                        prix: "À partir de 65€/nuit",
+                        lien: "https://www.booking.com",
+                        lienTexte: "Voir sur Booking"
+                    },
+                    {
+                        icone: "🏡",
+                        nom: "Gîtes & Airbnb",
+                        description: "Pour les groupes ou familles, il y a de jolis gîtes dans le coin. Idéal si vous voulez prolonger le week-end.",
+                        prix: "Variable",
+                        lien: "https://www.airbnb.fr",
+                        lienTexte: "Voir sur Airbnb"
+                    }
+                ]
+            },
+            rsvp: {
+                titre: "Vous venez ?",
+                dateLimite: "15 mai 2026",
+                texte: "Pour qu'on puisse tout organiser au mieux, merci de nous dire si vous serez là (et combien vous serez) avant le <strong>15 mai</strong>. Un petit message suffit !",
+                contacts: [
+                    {
+                        nom: "Céline",
+                        tel: "06 12 34 56 78",
+                        lienTel: "tel:+33612345678"
+                    },
+                    {
+                        nom: "Mathieu",
+                        tel: "06 98 76 54 32",
+                        lienTel: "tel:+33698765432"
+                    }
+                ]
             },
             infos: [
                 {
                     icone: "👗",
                     titre: "Dress code",
-                    texte: "Tenue de fête — soyez beaux, soyez vous !"
+                    texte: "Tenue de fête mais pas besoin d'en faire trop — soyez beaux, soyez vous !"
+                },
+                {
+                    icone: "👶",
+                    titre: "Enfants",
+                    texte: "Les enfants sont les bienvenus ! Prévenez-nous juste pour qu'on prévoit assez de place."
                 },
                 {
                     icone: "🎁",
                     titre: "Cadeaux",
-                    texte: "Votre présence est le plus beau des cadeaux. Si vous insistez, une cagnotte sera disponible sur place."
-                },
-                {
-                    icone: "📞",
-                    titre: "Contact",
-                    texte: "Mathieu : 06 12 34 56 78 — lea@email.com"
+                    texte: "Votre présence est le plus beau cadeau. Mais si vous insistez, on ne dit pas non à une bonne bouteille."
                 }
-            ]
+            ],
+            footer: {
+                contactCeline: "06 12 34 56 78",
+                contactMathieu: "06 98 76 54 32"
+            }
         };
 
         /* ==============================================
@@ -751,6 +1015,43 @@
         document.getElementById('lieu-indication').textContent = DATA.lieu.indication;
         document.getElementById('lieu-maps-link').href = DATA.lieu.lienMaps;
 
+        // --- Hébergement ---
+        document.getElementById('hebergement-intro').textContent = DATA.hebergement.intro;
+        var hebergGrid = document.getElementById('hebergement-grid');
+        DATA.hebergement.options.forEach(function(opt) {
+            var div = document.createElement('div');
+            div.className = 'hebergement-card';
+            var lienHtml = '';
+            if (opt.lien && opt.lienTexte) {
+                lienHtml = '<a class="heberg-link" href="' + opt.lien + '" target="_blank">' + opt.lienTexte + '</a>';
+            }
+            var prixHtml = '';
+            if (opt.prix) {
+                prixHtml = '<div class="heberg-prix">' + opt.prix + '</div>';
+            }
+            div.innerHTML =
+                '<div class="heberg-icone">' + opt.icone + '</div>' +
+                '<div class="heberg-nom">' + opt.nom + '</div>' +
+                '<div class="heberg-desc">' + opt.description + '</div>' +
+                prixHtml +
+                lienHtml;
+            hebergGrid.appendChild(div);
+        });
+
+        // --- RSVP ---
+        document.getElementById('rsvp-titre').textContent = DATA.rsvp.titre;
+        document.getElementById('rsvp-date-limite').textContent = "Avant le " + DATA.rsvp.dateLimite;
+        document.getElementById('rsvp-texte').innerHTML = DATA.rsvp.texte;
+        var rsvpContacts = document.getElementById('rsvp-contacts');
+        DATA.rsvp.contacts.forEach(function(contact) {
+            var div = document.createElement('div');
+            div.className = 'rsvp-contact-card';
+            div.innerHTML =
+                '<div class="contact-nom">' + contact.nom + '</div>' +
+                '<div class="contact-tel"><a href="' + contact.lienTel + '">' + contact.tel + '</a></div>';
+            rsvpContacts.appendChild(div);
+        });
+
         // --- Infos pratiques ---
         var infosGrid = document.getElementById('infos-grid');
         DATA.infos.forEach(function(info) {
@@ -767,6 +1068,10 @@
         document.getElementById('footer-noms').textContent =
             DATA.couple.prenom1 + " & " + DATA.couple.prenom2 + " · " + DATA.anniversaire.prenom;
         document.getElementById('footer-annee').textContent = "2026";
+        document.getElementById('footer-contacts').innerHTML =
+            '<a href="tel:' + DATA.rsvp.contacts[0].lienTel + '">' + DATA.rsvp.contacts[0].nom + ' : ' + DATA.rsvp.contacts[0].tel + '</a>' +
+            ' · ' +
+            '<a href="tel:' + DATA.rsvp.contacts[1].lienTel + '">' + DATA.rsvp.contacts[1].nom + ' : ' + DATA.rsvp.contacts[1].tel + '</a>';
 
         /* ==============================================
            COUNTDOWN (compte à rebours)
