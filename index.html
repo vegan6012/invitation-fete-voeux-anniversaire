@@ -110,7 +110,6 @@
             color: #888;
             letter-spacing: 2px;
             text-transform: uppercase;
-            /* ====== MODIFICATION : plus d'espace après le sous-titre ====== */
             margin-bottom: 50px;
         }
 
@@ -228,6 +227,65 @@
             font-weight: 700;
             text-align: center;
             margin-bottom: 50px;
+        }
+
+        /* ============================================
+           BIENVENUE (section avant le programme)
+           ============================================ */
+        #bienvenue {
+            background: #FAFAFA;
+            padding: 60px 20px;
+        }
+
+        .bienvenue-box {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .bienvenue-box .bienvenue-icone {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .bienvenue-box .bienvenue-titre {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .bienvenue-box .bienvenue-texte {
+            font-size: 1.05rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .bienvenue-encart {
+            background: white;
+            border-radius: 16px;
+            padding: 25px 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            border-left: 4px solid #C9A87C;
+            text-align: left;
+        }
+
+        .bienvenue-encart .encart-titre {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #C9A87C;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bienvenue-encart .encart-texte {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
         }
 
         /* ============================================
@@ -385,7 +443,7 @@
         }
 
         /* ============================================
-           HÉBERGEMENT (nouvelle section)
+           HÉBERGEMENT
            ============================================ */
         #hebergement {
             background: white;
@@ -464,7 +522,7 @@
         }
 
         /* ============================================
-           RSVP / PRÉVENIR (nouvelle section)
+           RSVP / PRÉVENIR
            ============================================ */
         #rsvp {
             background: #FAFAFA;
@@ -672,6 +730,10 @@
             .hebergement-grid {
                 grid-template-columns: 1fr;
             }
+
+            .bienvenue-encart {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -740,6 +802,21 @@
     </section>
 
     <!-- ==========================================
+         BIENVENUE (avant le programme)
+         ========================================== -->
+    <section id="bienvenue">
+        <div class="bienvenue-box">
+            <div class="bienvenue-icone" id="bienvenue-icone"></div>
+            <h2 class="bienvenue-titre" id="bienvenue-titre"></h2>
+            <p class="bienvenue-texte" id="bienvenue-texte"></p>
+            <div class="bienvenue-encart">
+                <div class="encart-titre" id="bienvenue-encart-titre"></div>
+                <div class="encart-texte" id="bienvenue-encart-texte"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
          PROGRAMME
          ========================================== -->
     <section id="programme">
@@ -774,7 +851,7 @@
     </section>
 
     <!-- ==========================================
-         HÉBERGEMENT (nouvelle section)
+         HÉBERGEMENT
          ========================================== -->
     <section id="hebergement">
         <h2 class="section-title">Hébergement</h2>
@@ -785,7 +862,7 @@
     </section>
 
     <!-- ==========================================
-         RSVP / PRÉVENIR (nouvelle section)
+         RSVP / PRÉVENIR
          ========================================== -->
     <section id="rsvp">
         <div class="rsvp-box">
@@ -847,6 +924,13 @@
                 detail: "30 ans de vie",
                 dateNaissance: "12 octobre 1996"
             },
+            bienvenue: {
+                icone: "🤝",
+                titre: "Venez comme vous voulez !",
+                texte: "Tout le monde est le bienvenu — et même encouragé — à participer à l'ensemble de la journée. Mais on sait que chacun a ses contraintes : vous êtes entièrement libres de ne venir qu'à la cérémonie des vœux, qu'à la fête commune, ou aux deux. Aucune pression, ce qui compte c'est de partager un bout de cette journée avec vous.",
+                encartTitre: "🍽️ Le dîner du soir",
+                encartTexte: "La seule chose vraiment importante pour nous, c'est de savoir combien de personnes seront là pour le repas du soir. C'est ce qui nous permet d'organiser le repas. Alors quand vous nous confirmez votre présence, précisez-nous si vous restez pour manger !"
+            },
             programme: [
                 {
                     heure: "14h30",
@@ -885,10 +969,10 @@
                 },
                 {
                     heure: "20h00",
-                    titre: "Diner et soirée ",
+                    titre: "Dîner et soirée",
                     description: "La direction décline toute responsabilité en cas de retard.",
                     type: "commun",
-                    icone: "🥳"
+                    icone: "🍽️"
                 },
                 {
                     heure: "???",
@@ -910,7 +994,7 @@
                     {
                         icone: "🏕️",
                         nom: "Dormir sur place",
-                        description: "Une salle sera aménagé pour dormir. Amenez de quoi dormir (sac de couchage, matelas gonflable...)",
+                        description: "Une salle sera aménagée pour dormir. Amenez de quoi dormir (sac de couchage, matelas gonflable...)",
                         prix: "Gratuit",
                         lien: "",
                         lienTexte: ""
@@ -919,7 +1003,7 @@
                         icone: "🏨",
                         nom: "Hôtel B&B à Thourotte",
                         description: "Hôtel à 10 min en voiture du site",
-                        prix: "Env. 30€ par personnes",
+                        prix: "Env. 30€ par personne",
                         lien: "https://www.hotel-bb.com/fr/hotel/compiegne-thourotte?utm_source=googlemaps&utm_medium=fichehotel&utm_campaign=yext",
                         lienTexte: "Site pour réserver"
                     },
@@ -936,17 +1020,15 @@
             rsvp: {
                 titre: "Vous venez ?",
                 dateLimite: "15 mai 2026",
-                texte: "Pour qu'on puisse tout organiser au mieux, merci de nous dire si vous serez là (et combien vous serez) avant le <strong>15 mai</strong>. Un petit message suffit !",
+                texte: "Pour qu'on puisse tout organiser au mieux (surtout le repas !), merci de nous dire si vous serez là — et surtout <strong>si vous restez pour le dîner</strong> — avant le <strong>15 mai</strong>. Un petit message à Céline ou Mathieu suffit !",
                 contacts: [
                     {
                         nom: "Céline",
-                        tel: "06 12 34 56 78",
-                        lienTel: "tel:+33612345678"
+                        tel: "Par téléphone (vous avez son numéro)"
                     },
                     {
                         nom: "Mathieu",
-                        tel: "06 98 76 54 32",
-                        lienTel: "tel:+33698765432"
+                        tel: "Insta / Messenger / SMS - faites comme vous le sentez"
                     }
                 ]
             },
@@ -959,12 +1041,9 @@
                 {
                     icone: "🎁",
                     titre: "Cadeaux",
-                    texte: "Votre présence est le plus beau cadeau."
+                    texte: "Votre présence nous comble déjà suffisamment."
                 }
-            ],
-            footer: {
-                contactMathieu: "Normalement, vous devez avoir mon contact 😉"
-            }
+            ]
         };
 
         /* ==============================================
@@ -989,6 +1068,13 @@
         var options = { day: 'numeric', month: 'long', year: 'numeric' };
         var dateFormatee = dateObj.toLocaleDateString('fr-FR', options);
         document.getElementById('hero-date-lieu').textContent = dateFormatee + " · " + DATA.hero.lieuCourt;
+
+        // --- Bienvenue ---
+        document.getElementById('bienvenue-icone').textContent = DATA.bienvenue.icone;
+        document.getElementById('bienvenue-titre').textContent = DATA.bienvenue.titre;
+        document.getElementById('bienvenue-texte').textContent = DATA.bienvenue.texte;
+        document.getElementById('bienvenue-encart-titre').innerHTML = DATA.bienvenue.encartTitre;
+        document.getElementById('bienvenue-encart-texte').textContent = DATA.bienvenue.encartTexte;
 
         // --- Programme ---
         var progGrid = document.getElementById('programme-grid');
@@ -1043,9 +1129,15 @@
         DATA.rsvp.contacts.forEach(function(contact) {
             var div = document.createElement('div');
             div.className = 'rsvp-contact-card';
+            var telHtml = '';
+            if (contact.tel.match(/^0[67]/)) {
+                telHtml = '<a href="tel:+33' + contact.tel.replace(/\s/g, '').substring(1) + '">' + contact.tel + '</a>';
+            } else {
+                telHtml = contact.tel;
+            }
             div.innerHTML =
                 '<div class="contact-nom">' + contact.nom + '</div>' +
-                '<div class="contact-tel"><a href="' + contact.lienTel + '">' + contact.tel + '</a></div>';
+                '<div class="contact-tel">' + telHtml + '</div>';
             rsvpContacts.appendChild(div);
         });
 
@@ -1065,10 +1157,17 @@
         document.getElementById('footer-noms').textContent =
             DATA.couple.prenom1 + " & " + DATA.couple.prenom2 + " · " + DATA.anniversaire.prenom;
         document.getElementById('footer-annee').textContent = "2026";
-        document.getElementById('footer-contacts').innerHTML =
-            '<a href="tel:' + DATA.rsvp.contacts[0].lienTel + '">' + DATA.rsvp.contacts[0].nom + ' : ' + DATA.rsvp.contacts[0].tel + '</a>' +
-            ' · ' +
-            '<a href="tel:' + DATA.rsvp.contacts[1].lienTel + '">' + DATA.rsvp.contacts[1].nom + ' : ' + DATA.rsvp.contacts[1].tel + '</a>';
+
+        var footerContactsHtml = '';
+        DATA.rsvp.contacts.forEach(function(contact, index) {
+            if (index > 0) footerContactsHtml += ' · ';
+            if (contact.tel.match(/^0[67]/)) {
+                footerContactsHtml += contact.nom + ' : <a href="tel:+33' + contact.tel.replace(/\s/g, '').substring(1) + '">' + contact.tel + '</a>';
+            } else {
+                footerContactsHtml += contact.nom + ' : ' + contact.tel;
+            }
+        });
+        document.getElementById('footer-contacts').innerHTML = footerContactsHtml;
 
         /* ==============================================
            COUNTDOWN (compte à rebours)
