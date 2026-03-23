@@ -230,62 +230,77 @@
         }
 
         /* ============================================
-           BIENVENUE (section avant le programme)
+           BIENVENUE / VENEZ COMME VOUS VOULEZ
            ============================================ */
         #bienvenue {
             background: #FAFAFA;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
 
-        .bienvenue-box {
-            max-width: 700px;
+        .bienvenue-wrapper {
+            max-width: 750px;
             margin: 0 auto;
-            text-align: center;
         }
 
-        .bienvenue-box .bienvenue-icone {
+        .bienvenue-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .bienvenue-header .bienvenue-icone {
             font-size: 2.5rem;
             margin-bottom: 15px;
         }
 
-        .bienvenue-box .bienvenue-titre {
+        .bienvenue-header .bienvenue-titre {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 20px;
             color: #333;
         }
 
-        .bienvenue-box .bienvenue-texte {
+        .bienvenue-texte {
             font-size: 1.05rem;
             color: #666;
             line-height: 1.8;
-            margin-bottom: 25px;
+            text-align: center;
+            margin-bottom: 35px;
         }
 
+        /* Encart dîner — style carte distincte */
         .bienvenue-encart {
             background: white;
             border-radius: 16px;
-            padding: 25px 30px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
-            border-left: 4px solid #C9A87C;
-            text-align: left;
-        }
-
-        .bienvenue-encart .encart-titre {
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 8px;
-            color: #C9A87C;
+            padding: 30px 35px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.06);
             display: flex;
-            align-items: center;
-            gap: 8px;
+            gap: 20px;
+            align-items: flex-start;
         }
 
-        .bienvenue-encart .encart-texte {
+        .bienvenue-encart-icone {
+            font-size: 2.2rem;
+            flex-shrink: 0;
+            line-height: 1;
+            margin-top: 2px;
+        }
+
+        .bienvenue-encart-contenu {
+            flex: 1;
+        }
+
+        .bienvenue-encart-titre {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #C9A87C;
+            margin-bottom: 8px;
+        }
+
+        .bienvenue-encart-texte {
             font-size: 0.95rem;
             color: #666;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* ============================================
@@ -472,6 +487,8 @@
             padding: 30px;
             border-left: 4px solid #7EB8C9;
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .hebergement-card:hover {
@@ -487,21 +504,22 @@
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             font-size: 1.15rem;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
         }
 
         .hebergement-card .heberg-desc {
             font-size: 0.9rem;
             color: #888;
             line-height: 1.6;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            flex: 1;
         }
 
         .hebergement-card .heberg-prix {
             font-size: 0.85rem;
             color: #C9A87C;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
 
         .heberg-link {
@@ -514,11 +532,17 @@
             font-size: 0.85rem;
             font-weight: 500;
             transition: transform 0.3s, box-shadow 0.3s;
+            align-self: flex-start;
         }
 
         .heberg-link:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(126, 184, 201, 0.4);
+        }
+
+        /* Placeholder pour les cartes sans lien */
+        .heberg-link-placeholder {
+            height: 35px;
         }
 
         /* ============================================
@@ -686,19 +710,56 @@
         /* ============================================
            RESPONSIVE
            ============================================ */
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 16px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 35px;
+            }
+
             nav ul {
-                gap: 15px;
-                font-size: 0.8rem;
+                gap: 12px;
+                padding: 0 10px;
+            }
+
+            nav a {
+                font-size: 0.78rem;
+            }
+
+            /* Hero mobile */
+            #hero {
+                padding: 70px 16px 30px;
+            }
+
+            #hero-titre {
+                font-size: clamp(2rem, 8vw, 3rem);
+                margin-bottom: 25px;
+            }
+
+            #hero-sous-titre {
+                font-size: 0.95rem;
+                margin-bottom: 35px;
             }
 
             .hero-cards {
                 flex-direction: column;
                 align-items: center;
+                gap: 15px;
+                margin-bottom: 30px;
             }
 
             .hero-card {
-                min-width: 80%;
+                min-width: unset;
+                width: 100%;
+                max-width: 320px;
+                padding: 22px 28px;
+            }
+
+            .hero-card .noms {
+                font-size: 1.3rem;
             }
 
             .countdown {
@@ -709,17 +770,75 @@
                 font-size: 1.8rem;
             }
 
+            /* Bienvenue mobile */
+            .bienvenue-header .bienvenue-titre {
+                font-size: 1.6rem;
+            }
+
+            .bienvenue-texte {
+                font-size: 0.95rem;
+                line-height: 1.7;
+                text-align: left;
+            }
+
+            .bienvenue-encart {
+                flex-direction: column;
+                gap: 12px;
+                padding: 22px 20px;
+            }
+
+            .bienvenue-encart-icone {
+                text-align: center;
+            }
+
+            .bienvenue-encart-titre {
+                text-align: center;
+            }
+
+            .bienvenue-encart-texte {
+                text-align: left;
+            }
+
+            /* Programme mobile */
             .programme-item {
                 gap: 12px;
             }
 
             .programme-heure {
                 font-size: 1rem;
-                min-width: 60px;
+                min-width: 55px;
             }
 
+            .programme-titre {
+                font-size: 1rem;
+            }
+
+            .programme-desc {
+                font-size: 0.85rem;
+            }
+
+            /* Lieu mobile */
+            .lieu-card {
+                padding: 30px 25px;
+            }
+
+            /* Hébergement mobile */
+            .hebergement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hebergement-intro {
+                font-size: 0.95rem;
+                text-align: left;
+            }
+
+            /* RSVP mobile */
             .rsvp-box {
-                padding: 35px 25px;
+                padding: 35px 22px;
+            }
+
+            .rsvp-box .rsvp-titre {
+                font-size: 1.4rem;
             }
 
             .rsvp-contacts {
@@ -727,12 +846,14 @@
                 align-items: center;
             }
 
-            .hebergement-grid {
-                grid-template-columns: 1fr;
+            .rsvp-contact-card {
+                width: 100%;
+                max-width: 280px;
             }
 
-            .bienvenue-encart {
-                padding: 20px;
+            /* Infos mobile */
+            .infos-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -802,16 +923,21 @@
     </section>
 
     <!-- ==========================================
-         BIENVENUE (avant le programme)
+         BIENVENUE / VENEZ COMME VOUS VOULEZ
          ========================================== -->
     <section id="bienvenue">
-        <div class="bienvenue-box">
-            <div class="bienvenue-icone" id="bienvenue-icone"></div>
-            <h2 class="bienvenue-titre" id="bienvenue-titre"></h2>
+        <div class="bienvenue-wrapper">
+            <div class="bienvenue-header">
+                <div class="bienvenue-icone" id="bienvenue-icone"></div>
+                <h2 class="bienvenue-titre" id="bienvenue-titre"></h2>
+            </div>
             <p class="bienvenue-texte" id="bienvenue-texte"></p>
             <div class="bienvenue-encart">
-                <div class="encart-titre" id="bienvenue-encart-titre"></div>
-                <div class="encart-texte" id="bienvenue-encart-texte"></div>
+                <div class="bienvenue-encart-icone" id="bienvenue-encart-icone"></div>
+                <div class="bienvenue-encart-contenu">
+                    <div class="bienvenue-encart-titre" id="bienvenue-encart-titre"></div>
+                    <div class="bienvenue-encart-texte" id="bienvenue-encart-texte"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -928,7 +1054,8 @@
                 icone: "🤝",
                 titre: "Venez comme vous voulez !",
                 texte: "Tout le monde est le bienvenu — et même encouragé — à participer à l'ensemble de la journée. Mais on sait que chacun a ses contraintes : vous êtes entièrement libres de ne venir qu'à la cérémonie des vœux, qu'à la fête commune, ou aux deux. Aucune pression, ce qui compte c'est de partager un bout de cette journée avec vous.",
-                encartTitre: "🍽️ Le dîner du soir",
+                encartIcone: "🍽️",
+                encartTitre: "Le dîner du soir",
                 encartTexte: "La seule chose vraiment importante pour nous, c'est de savoir combien de personnes seront là pour le repas du soir. C'est ce qui nous permet d'organiser le repas. Alors quand vous nous confirmez votre présence, précisez-nous si vous restez pour manger !"
             },
             programme: [
@@ -1002,7 +1129,7 @@
                     {
                         icone: "🏨",
                         nom: "Hôtel B&B à Thourotte",
-                        description: "Hôtel à 10 min en voiture du site",
+                        description: "Hôtel à 10 min en voiture du site.",
                         prix: "Env. 30€ par personne",
                         lien: "https://www.hotel-bb.com/fr/hotel/compiegne-thourotte?utm_source=googlemaps&utm_medium=fichehotel&utm_campaign=yext",
                         lienTexte: "Site pour réserver"
@@ -1020,15 +1147,15 @@
             rsvp: {
                 titre: "Vous venez ?",
                 dateLimite: "15 mai 2026",
-                texte: "Pour qu'on puisse tout organiser au mieux (surtout le repas !), merci de nous dire si vous serez là — et surtout <strong>si vous restez pour le dîner</strong> — avant le <strong>15 mai</strong>. Un petit message à Céline ou Mathieu suffit !",
+                texte: "Pour qu'on puisse tout organiser au mieux, merci de nous dire si vous serez là (et combien vous serez) avant le <strong>15 mai</strong>. Un petit message à Céline ou Mathieu suffit ! N'oubliez pas de préciser si vous restez pour le dîner.",
                 contacts: [
                     {
                         nom: "Céline",
-                        tel: "Par téléphone (vous avez son numéro)"
+                        tel: "06 XX XX XX XX"
                     },
                     {
                         nom: "Mathieu",
-                        tel: "Insta / Messenger / SMS - faites comme vous le sentez"
+                        tel: "06 XX XX XX XX"
                     }
                 ]
             },
@@ -1073,7 +1200,8 @@
         document.getElementById('bienvenue-icone').textContent = DATA.bienvenue.icone;
         document.getElementById('bienvenue-titre').textContent = DATA.bienvenue.titre;
         document.getElementById('bienvenue-texte').textContent = DATA.bienvenue.texte;
-        document.getElementById('bienvenue-encart-titre').innerHTML = DATA.bienvenue.encartTitre;
+        document.getElementById('bienvenue-encart-icone').textContent = DATA.bienvenue.encartIcone;
+        document.getElementById('bienvenue-encart-titre').textContent = DATA.bienvenue.encartTitre;
         document.getElementById('bienvenue-encart-texte').textContent = DATA.bienvenue.encartTexte;
 
         // --- Programme ---
@@ -1107,6 +1235,8 @@
             var lienHtml = '';
             if (opt.lien && opt.lienTexte) {
                 lienHtml = '<a class="heberg-link" href="' + opt.lien + '" target="_blank">' + opt.lienTexte + '</a>';
+            } else {
+                lienHtml = '<div class="heberg-link-placeholder"></div>';
             }
             var prixHtml = '';
             if (opt.prix) {
@@ -1129,15 +1259,10 @@
         DATA.rsvp.contacts.forEach(function(contact) {
             var div = document.createElement('div');
             div.className = 'rsvp-contact-card';
-            var telHtml = '';
-            if (contact.tel.match(/^0[67]/)) {
-                telHtml = '<a href="tel:+33' + contact.tel.replace(/\s/g, '').substring(1) + '">' + contact.tel + '</a>';
-            } else {
-                telHtml = contact.tel;
-            }
+            var telLink = 'tel:' + contact.tel.replace(/\s/g, '');
             div.innerHTML =
                 '<div class="contact-nom">' + contact.nom + '</div>' +
-                '<div class="contact-tel">' + telHtml + '</div>';
+                '<div class="contact-tel"><a href="' + telLink + '">' + contact.tel + '</a></div>';
             rsvpContacts.appendChild(div);
         });
 
@@ -1158,16 +1283,14 @@
             DATA.couple.prenom1 + " & " + DATA.couple.prenom2 + " · " + DATA.anniversaire.prenom;
         document.getElementById('footer-annee').textContent = "2026";
 
-        var footerContactsHtml = '';
-        DATA.rsvp.contacts.forEach(function(contact, index) {
-            if (index > 0) footerContactsHtml += ' · ';
-            if (contact.tel.match(/^0[67]/)) {
-                footerContactsHtml += contact.nom + ' : <a href="tel:+33' + contact.tel.replace(/\s/g, '').substring(1) + '">' + contact.tel + '</a>';
-            } else {
-                footerContactsHtml += contact.nom + ' : ' + contact.tel;
-            }
+        // Footer contacts — construit dynamiquement
+        var footerContacts = document.getElementById('footer-contacts');
+        var footerParts = [];
+        DATA.rsvp.contacts.forEach(function(contact) {
+            var telLink = 'tel:' + contact.tel.replace(/\s/g, '');
+            footerParts.push('<a href="' + telLink + '">' + contact.nom + ' : ' + contact.tel + '</a>');
         });
-        document.getElementById('footer-contacts').innerHTML = footerContactsHtml;
+        footerContacts.innerHTML = footerParts.join(' · ');
 
         /* ==============================================
            COUNTDOWN (compte à rebours)
