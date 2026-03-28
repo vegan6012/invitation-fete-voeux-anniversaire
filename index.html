@@ -118,11 +118,20 @@
             font-size: clamp(2.5rem, 7vw, 5rem);
             font-weight: 900;
             line-height: 1.1;
-            margin-bottom: 40px;
+            margin-bottom: 15px;
             background: linear-gradient(135deg, #C9A87C, #E8B4C8, #7EB8C9);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        /* Mention discrète des rôles */
+        #hero-roles {
+            font-size: 0.85rem;
+            color: #bbb;
+            font-style: italic;
+            margin-bottom: 40px;
+            letter-spacing: 0.5px;
         }
 
         /* Cartes couple + anniversaire */
@@ -540,7 +549,6 @@
             box-shadow: 0 4px 15px rgba(126, 184, 201, 0.4);
         }
 
-        /* Placeholder pour les cartes sans lien */
         .heberg-link-placeholder {
             height: 35px;
         }
@@ -586,43 +594,6 @@
             font-size: 1rem;
             color: #666;
             line-height: 1.7;
-            margin-bottom: 30px;
-        }
-
-        .rsvp-contacts {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .rsvp-contact-card {
-            background: #FAFAFA;
-            border-radius: 12px;
-            padding: 20px 30px;
-            text-align: center;
-            min-width: 200px;
-        }
-
-        .rsvp-contact-card .contact-nom {
-            font-weight: 600;
-            font-size: 1.05rem;
-            margin-bottom: 6px;
-        }
-
-        .rsvp-contact-card .contact-tel {
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        .rsvp-contact-card .contact-tel a {
-            color: #7EB8C9;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .rsvp-contact-card .contact-tel a:hover {
-            text-decoration: underline;
         }
 
         /* ============================================
@@ -690,21 +661,12 @@
         #footer-annee {
             color: #999;
             font-size: 0.85rem;
+            margin-bottom: 10px;
         }
 
         .footer-contacts {
-            margin-top: 15px;
             font-size: 0.85rem;
             color: #aaa;
-        }
-
-        .footer-contacts a {
-            color: #C9A87C;
-            text-decoration: none;
-        }
-
-        .footer-contacts a:hover {
-            text-decoration: underline;
         }
 
         /* ============================================
@@ -729,14 +691,18 @@
                 font-size: 0.78rem;
             }
 
-            /* Hero mobile */
             #hero {
                 padding: 70px 16px 30px;
             }
 
             #hero-titre {
                 font-size: clamp(2rem, 8vw, 3rem);
-                margin-bottom: 25px;
+                margin-bottom: 10px;
+            }
+
+            #hero-roles {
+                font-size: 0.78rem;
+                margin-bottom: 30px;
             }
 
             #hero-sous-titre {
@@ -770,7 +736,6 @@
                 font-size: 1.8rem;
             }
 
-            /* Bienvenue mobile */
             .bienvenue-header .bienvenue-titre {
                 font-size: 1.6rem;
             }
@@ -799,7 +764,6 @@
                 text-align: left;
             }
 
-            /* Programme mobile */
             .programme-item {
                 gap: 12px;
             }
@@ -817,12 +781,10 @@
                 font-size: 0.85rem;
             }
 
-            /* Lieu mobile */
             .lieu-card {
                 padding: 30px 25px;
             }
 
-            /* Hébergement mobile */
             .hebergement-grid {
                 grid-template-columns: 1fr;
             }
@@ -832,7 +794,6 @@
                 text-align: left;
             }
 
-            /* RSVP mobile */
             .rsvp-box {
                 padding: 35px 22px;
             }
@@ -841,17 +802,6 @@
                 font-size: 1.4rem;
             }
 
-            .rsvp-contacts {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .rsvp-contact-card {
-                width: 100%;
-                max-width: 280px;
-            }
-
-            /* Infos mobile */
             .infos-grid {
                 grid-template-columns: 1fr;
             }
@@ -883,6 +833,7 @@
          ========================================== -->
     <section id="hero">
         <h1 id="hero-titre"></h1>
+        <p id="hero-roles"></p>
         <p id="hero-sous-titre"></p>
 
         <div class="hero-cards">
@@ -957,9 +908,7 @@
                 <span>Tous ensemble</span>
             </div>
         </div>
-        <div class="programme-grid" id="programme-grid">
-            <!-- Rempli dynamiquement par JS -->
-        </div>
+        <div class="programme-grid" id="programme-grid"></div>
     </section>
 
     <!-- ==========================================
@@ -982,9 +931,7 @@
     <section id="hebergement">
         <h2 class="section-title">Hébergement</h2>
         <p class="hebergement-intro" id="hebergement-intro"></p>
-        <div class="hebergement-grid" id="hebergement-grid">
-            <!-- Rempli dynamiquement par JS -->
-        </div>
+        <div class="hebergement-grid" id="hebergement-grid"></div>
     </section>
 
     <!-- ==========================================
@@ -996,9 +943,6 @@
             <div class="rsvp-titre" id="rsvp-titre"></div>
             <div class="rsvp-date-limite" id="rsvp-date-limite"></div>
             <div class="rsvp-texte" id="rsvp-texte"></div>
-            <div class="rsvp-contacts" id="rsvp-contacts">
-                <!-- Rempli dynamiquement par JS -->
-            </div>
         </div>
     </section>
 
@@ -1007,9 +951,7 @@
          ========================================== -->
     <section id="infos">
         <h2 class="section-title">Infos pratiques</h2>
-        <div class="infos-grid" id="infos-grid">
-            <!-- Rempli dynamiquement par JS -->
-        </div>
+        <div class="infos-grid" id="infos-grid"></div>
     </section>
 
     <!-- ==========================================
@@ -1032,7 +974,8 @@
            ============================================== */
         var DATA = {
             hero: {
-                titre: "30 ans de vie à deux,\n30 ans de vie tout court",
+                titre: "Trente ans,\nça se fête !",
+                roles: "Céline & Laurent, les parents · Mathieu, le fils",
                 sousTitre: "Et on fête ça ensemble !",
                 dateEvenement: "2026-08-29T15:00:00",
                 lieuCourt: "Les Carrières de Montigny"
@@ -1041,14 +984,12 @@
                 prenom1: "Céline",
                 prenom2: "Laurent",
                 label: "Renouvellement de vœux",
-                detail: "30 ans de mariage",
-                dateMariage: "12 décembre 1996"
+                detail: "30 ans de mariage"
             },
             anniversaire: {
                 prenom: "Mathieu",
                 label: "Anniversaire",
-                detail: "30 ans de vie",
-                dateNaissance: "12 octobre 1996"
+                detail: "30 ans"
             },
             bienvenue: {
                 icone: "🤝",
@@ -1147,17 +1088,7 @@
             rsvp: {
                 titre: "Vous venez ?",
                 dateLimite: "15 mai 2026",
-                texte: "Pour qu'on puisse tout organiser au mieux, merci de nous dire si vous serez là (et combien vous serez) avant le <strong>15 mai</strong>. Un petit message à Céline ou Mathieu suffit ! N'oubliez pas de préciser si vous restez pour le dîner.",
-                contacts: [
-                    {
-                        nom: "Céline",
-                        tel: "06 XX XX XX XX"
-                    },
-                    {
-                        nom: "Mathieu",
-                        tel: "06 XX XX XX XX"
-                    }
-                ]
+                texte: "Pour qu'on puisse tout organiser au mieux, merci de nous dire si vous serez là (et combien vous serez) avant le <strong>15 mai</strong>. Un petit message à Céline ou Mathieu suffit ! N'oubliez pas de préciser si vous restez pour le dîner 🍽️"
             },
             infos: [
                 {
@@ -1179,6 +1110,7 @@
 
         // --- Hero ---
         document.getElementById('hero-titre').textContent = DATA.hero.titre;
+        document.getElementById('hero-roles').textContent = DATA.hero.roles;
         document.getElementById('hero-sous-titre').textContent = DATA.hero.sousTitre;
 
         // --- Cartes ---
@@ -1255,16 +1187,6 @@
         document.getElementById('rsvp-titre').textContent = DATA.rsvp.titre;
         document.getElementById('rsvp-date-limite').textContent = "Avant le " + DATA.rsvp.dateLimite;
         document.getElementById('rsvp-texte').innerHTML = DATA.rsvp.texte;
-        var rsvpContacts = document.getElementById('rsvp-contacts');
-        DATA.rsvp.contacts.forEach(function(contact) {
-            var div = document.createElement('div');
-            div.className = 'rsvp-contact-card';
-            var telLink = 'tel:' + contact.tel.replace(/\s/g, '');
-            div.innerHTML =
-                '<div class="contact-nom">' + contact.nom + '</div>' +
-                '<div class="contact-tel"><a href="' + telLink + '">' + contact.tel + '</a></div>';
-            rsvpContacts.appendChild(div);
-        });
 
         // --- Infos pratiques ---
         var infosGrid = document.getElementById('infos-grid');
@@ -1282,15 +1204,8 @@
         document.getElementById('footer-noms').textContent =
             DATA.couple.prenom1 + " & " + DATA.couple.prenom2 + " · " + DATA.anniversaire.prenom;
         document.getElementById('footer-annee').textContent = "2026";
-
-        // Footer contacts — construit dynamiquement
-        var footerContacts = document.getElementById('footer-contacts');
-        var footerParts = [];
-        DATA.rsvp.contacts.forEach(function(contact) {
-            var telLink = 'tel:' + contact.tel.replace(/\s/g, '');
-            footerParts.push('<a href="' + telLink + '">' + contact.nom + ' : ' + contact.tel + '</a>');
-        });
-        footerContacts.innerHTML = footerParts.join(' · ');
+        document.getElementById('footer-contacts').textContent =
+            "Contactez Céline ou Mathieu pour toute question";
 
         /* ==============================================
            COUNTDOWN (compte à rebours)
